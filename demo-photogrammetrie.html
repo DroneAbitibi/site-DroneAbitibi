@@ -447,6 +447,17 @@
       }
     ).addTo(map);
 
+    // orthophoto hiver
+    var orthophotoHiver = L.tileLayer(
+      'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/sableville02_high/tiles_ortho/{z}/{x}/{y}.png',
+      {
+        minZoom: 15,
+        maxZoom: 22,
+        tms: true,      // IMPORTANT : gdal2tiles = TMS -> Y inversé
+        attribution: '&copy; DV Drone - Orthophoto hiver',
+      }
+    ).addTo(map);
+
     // 2) DTM (MNT) – souvent visualisé en ombrage (hillshade) ou palette de couleurs
     var dtm = L.tileLayer(
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
@@ -487,6 +498,7 @@
 
     var overlayMaps = {
       "Orthophoto": orthophoto,
+      "Orthophoto hiver": orthophotoHiver
       "DTM": dtm,
       "DSM": dsm,
     };
