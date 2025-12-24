@@ -315,25 +315,38 @@
       <aside class="side-panel">
         <h2>Couches disponibles</h2>
         <p>Chaque couche illustre un aspect différent de la même zone :</p>
+
         <ul class="layer-list">
           <li>
             <span class="chip">Base</span>
-            <strong>Orthophoto</strong> – mosaïque d’images aériennes géoréférencées.
+            <strong>Orthophoto (été)</strong> – mosaïque d’images aériennes géoréférencées,
+            offrant une représentation réaliste du sol et des infrastructures visibles.
           </li>
+
+          <li>
+            <span class="chip">Base</span>
+            <strong>Orthophoto (hiver)</strong> – orthophoto acquise en milieu forestier
+            et terrain sablonneux, mettant en évidence les chemins, emprises et formes
+            générales du site malgré la couverture de neige.
+          </li>
+
           <li>
             <span class="chip">DTM</span>
-            <strong>Modèle numérique de terrain</strong> – altitude du sol nu (végétation et bâtiments retirés).
+            <strong>Modèle numérique de terrain</strong> – altitude du sol nu, après
+            suppression de la végétation, des bâtiments et des objets.
           </li>
+
           <li>
             <span class="chip">DSM</span>
-            <strong>Modèle numérique de surface</strong> – altitude incluant bâtiments, arbres, structures.
+            <strong>Modèle numérique de surface</strong> – altitude incluant les
+            bâtiments, la végétation et les structures présentes.
           </li>
         </ul>
 
         <p class="note">
-          Cette page est fournie à titre de démonstration. Les couches et résolutions
-          peuvent être adaptées selon les besoins d’un projet précis (survol, volume,
-          suivi de chantier, etc.).
+          Cette page est fournie à titre de démonstration. Les couches, styles de rendu et
+          résolutions peuvent être adaptés selon les besoins d’un projet précis
+          (survol, volumétrie, suivi de chantier, planification, etc.).
         </p>
       </aside>
     </div>
@@ -414,7 +427,7 @@
       center: [centerLat, centerLng],
       zoom: 16,              // à ajuster selon le niveau de détail souhaité
       minZoom: 15,           // pour éviter de trop dézoomer
-      maxZoom: 21,           // adapté à tes tuiles z=19
+      maxZoom: 20,           // adapté aux tuiles
       maxBounds: bounds,     // limite le déplacement à ce carré
       maxBoundsViscosity: 1  // effet “élastique” aux limites (1 = bloqué net)
     });
@@ -452,11 +465,11 @@
       'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/sableville02_high/tiles_ortho/{z}/{x}/{y}.png',
       {
         minZoom: 15,
-        maxZoom: 22,
+        maxZoom: 20,
         tms: true,      // IMPORTANT : gdal2tiles = TMS -> Y inversé
         attribution: '&copy; DV Drone - Orthophoto hiver',
       }
-    ).addTo(map);
+    );
 
     // 2) DTM (MNT) – souvent visualisé en ombrage (hillshade) ou palette de couleurs
     var dtm = L.tileLayer(
@@ -497,8 +510,8 @@
     };
 
     var overlayMaps = {
-      "Orthophoto": orthophoto,
-      "Orthophoto hiver": orthophotoHiver
+      "Été": orthophoto,
+      "Hiver": orthophotoHiver,
       "DTM": dtm,
       "DSM": dsm,
     };
