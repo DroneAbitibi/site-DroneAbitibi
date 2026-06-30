@@ -1,169 +1,204 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Drone Abitibi est une initiative régionale en développement consacrée à l'imagerie aérienne et à la découverte de l'Abitibi-Témiscamingue vue des airs." />
-  <title>Drone Abitibi</title>
-
+  <meta charset="utf-8">
+  <title>Drone Abitibi – Projet d'imagerie aérienne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Drone Abitibi est un projet d'entreprise d'imagerie aérienne en développement en Abitibi-Témiscamingue. Pour des services professionnels dès maintenant, consultez DV Drone – Imagerie aérienne.">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root{
+      --bg1:#0f1c0f;
+      --bg2:#263321;
+      --text:#f5f7f5;
+      --muted:#dfe6de;
+      --accent:#a9c48a;
+      --btn:#3e5c2c;
+      --btnHover:#4c7036;
+      --ring: rgba(255,255,255,.18);
+    }
+    *{box-sizing:border-box}
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
+      text-align:center;
+      padding:24px;
+    }
+    .wrap{max-width:720px;width:100%}
+
+    h1 {
+      font-size: clamp(20px, 6vw, 30px);
+      margin: 0 0 8px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--text);
+    }
+    p {margin:0 0 16px;color:var(--muted)}
+
+    .pill {
+      display:inline-block;
+      padding:6px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      color:var(--muted);
+    }
+
+    .logo {
+      display:flex;
+      justify-content:center;
+      margin-bottom:6px;
+    }
+    .logo img {
+      width:300px;
+      height:auto;
+    }
+
+    /* Boutons génériques */
+    .buttons,
+    .internal-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    a.button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:12px;
+      background:var(--btn);
+      color:var(--text);
+      font-weight:600;
+      text-decoration:none;
+      box-shadow:0 6px 20px var(--ring);
+      transition: transform .15s ease, background .2s ease;
+      font-size:14px;
+      min-width:230px;
+    }
+    a.button:hover {background:var(--btnHover); transform:translateY(-1px);}
+
+    /* Sections */
+    .section-title {
+      margin-top:28px;
+      margin-bottom:8px;
+      font-size:15px;
+      font-weight:600;
+      letter-spacing:.03em;
+      color:var(--accent);
+      text-transform:uppercase;
+    }
+
+    .note {
+      margin-top:32px;
+      font-size:13px;
+      color:var(--muted);
+      opacity:0.9;
+      line-height:1.6;
+    }
+    .highlight-link {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="logo" aria-label="Accueil Drone Abitibi">
-      <img src="assets/logo_vert.svg" alt="Drone Abitibi">
-      <span>Drone Abitibi</span>
-    </a>
+  <div class="wrap">
 
-    <nav aria-label="Navigation principale">
-      <a href="#realisations">Galerie</a>
-      <a href="photogrammetrie.html">Cartographie</a>
-      <a href="vie-privee.html">Vie privée</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <div class="pill">Projet d'imagerie aérienne en Abitibi</div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <img src="assets/logo_vert.svg" alt="Drone Abitibi" class="hero-logo">
+    <div class="logo">
+      <img src="assets/logo_fond_vert_avec_nom.svg" alt="Logo Drone Abitibi">
+    </div>
+	<!--
+    <h1>DRONE ABITIBI</h1>
+    -->
+	<p class="tagline">
+      Mettre en valeur l'Abitibi-Témiscamingue grâce à l'imagerie aérienne.
+    </p>
 
-        <h1>Drone Abitibi</h1>
+    <p>
+      Drone Abitibi est une initiative régionale consacrée à l'imagerie aérienne
+      et à la découverte du territoire de l'Abitibi-Témiscamingue.
+    </p>
 
-        <p>Mettre en valeur l'Abitibi-Témiscamingue vue des airs.</p>
+	<!-- SECTION CONTACT -->
+	<div class="section-title">Contact</div>
 
-        <div class="buttons">
-          <a href="#realisations" class="button">Explorer</a>
-          <a href="#services" class="button button-secondary">Services</a>
-        </div>
-      </div>
-    </section>
+	<div class="buttons">
+	  <a class="button" href="mailto:info@droneabitibi.ca">
+	    info@droneabitibi.ca
+	  </a>
+	</div>
+	
+	<div class="note">
+	  <p>
+		  Pour toute question concernant le projet Drone Abitibi ou pour discuter d'un besoin en imagerie aérienne.
+	  </p>
 
-    <section id="intro" class="intro page-section">
-      <p class="intro-text">
-        Drone Abitibi est une initiative régionale en développement, consacrée à l'imagerie aérienne
-        et à la découverte du territoire de l'Abitibi-Témiscamingue.
-      </p>
+    <!-- SECTION RÉSEAUX SOCIAUX -->
+    <div class="section-title">Réseaux sociaux</div>
 
-      <a href="mailto:info@droneabitibi.ca" class="contact-pill">
-        <span>✉</span>
-        info@droneabitibi.ca
-      </a>
-    </section>
-
-    <section id="services" class="page-section services-section">
-      <h2 class="section-title">Services et possibilités</h2>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <h3>Imagerie aérienne</h3>
-          <p>Photos et vidéos aériennes pour mettre en valeur les paysages, les lieux et les projets régionaux.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Cartographie</h3>
-          <p>Orthophotos, relevés visuels et démonstrations cartographiques pour explorer le potentiel du territoire.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Projet régional</h3>
-          <p>Développement progressif d'une plateforme dédiée à l'Abitibi-Témiscamingue et à l'imagerie par drone.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="realisations" class="page-section">
-      <h2 class="section-title">Dernières réalisations</h2>
-
-      <div class="grid">
-        <a href="#" class="card" style="background-image: url('images/granada_1600px.jpg');">
-          <h3>Granada</h3>
-        </a>
-
-        <a href="#" class="card" style="background-image: url('images/bellecombe_1600px.jpg');">
-          <h3>Bellecombe</h3>
-        </a>
-
-        <a href="#" class="card" style="background-image: url('images/dalembert_1600px.jpg');">
-          <h3>D'Alembert</h3>
-        </a>
-      </div>
-    </section>
-
-    <section id="carte" class="page-section">
-      <h2 class="section-title">Explorer la région</h2>
-      <div id="map" aria-label="Carte des lieux filmés par Drone Abitibi"></div>
-    </section>
-  </main>
-
-  <footer id="contact" class="footer">
-    <div>
-      <strong>Drone Abitibi</strong><br>
-      <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a>
+    <div class="buttons">
+	  <a class="button" href="https://www.tiktok.com/@DroneAbitibi" target="_blank" rel="noopener noreferrer">TikTok @DroneAbitibi</a>
+      <a class="button" href="https://instagram.com/droneabitibi" target="_blank" rel="noopener noreferrer">Instagram @DroneAbitibi</a>
+      <a class="button" href="https://facebook.com/droneabitibi" target="_blank" rel="noopener noreferrer">Facebook /DroneAbitibi</a>
+      <a class="button" href="https://www.youtube.com/@DroneAbitibi" target="_blank" rel="noopener noreferrer">YouTube @DroneAbitibi</a>
     </div>
 
-    <div class="socials" aria-label="Réseaux sociaux">
-      <a href="https://www.tiktok.com/@droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/tiktok.png" alt="TikTok">
-      </a>
+    <!-- SECTION LIENS DU SITE -->
+	<div class="section-title">Ressources du site</div>
+	<div class="internal-links">
+	  <a class="button" href="limites.html">
+	    Limites et possibilités d'un vol de drone
+	  </a>
+	  <a class="button" href="demo-photogrammetrie.html">
+	    Démonstration – Couches cartographiques
+	  </a>
+	</div>
 
-      <a href="https://www.facebook.com/droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/facebook.png" alt="Facebook">
-      </a>
+	<div class="note">
+	  <p>
+        <strong>Drone Abitibi</strong> est actuellement un projet en développement
+		  et une marque régionale en transition vers une offre de services plus structurée.
+	  </p>
 
-      <a href="https://www.instagram.com/droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/instagram.svg" alt="Instagram">
-      </a>
+	  <p>
+	    Pour toute question, collaboration ou demande de services professionnels
+	    liés à l'imagerie aérienne, vous pouvez communiquer à l'adresse suivante :
+	  </p>
 
-      <a href="https://www.youtube.com/@droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/youtube.png" alt="YouTube">
-      </a>
-    </div>
-  </footer>
+	  <p>
+	    <a class="highlight-link" href="mailto:info@droneabitibi.ca">
+	      info@droneabitibi.ca
+	    </a>
+	  </p>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const mapContainer = document.getElementById('map');
+	  <p>
+	    Les services professionnels sont actuellement réalisés à titre de
+	    <strong>travailleur autonome</strong> sous la bannière
+	    <a class="highlight-link" href="https://dvdrone.ca" target="_blank" rel="noopener noreferrer">
+	      DV Drone – Imagerie aérienne
+	    </a>,
+	    pendant que Drone Abitibi poursuit son développement comme projet régional.
+	  </p>
+	</div>
 
-    if (mapContainer && window.L) {
-      const map = L.map('map').setView([48.25, -79.05], 9);
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; OpenStreetMap'
-      }).addTo(map);
-
-      const lieux = [
-        {
-          nom: 'Granada',
-          coords: [48.205, -79.040],
-          lien: '#'
-        },
-        {
-          nom: 'Bellecombe',
-          coords: [48.163, -79.177],
-          lien: '#'
-        },
-        {
-          nom: "D'Alembert",
-          coords: [48.373, -79.127],
-          lien: '#'
-        }
-      ];
-
-      lieux.forEach(lieu => {
-        L.marker(lieu.coords)
-          .addTo(map)
-          .bindPopup(`
-            <strong>${lieu.nom}</strong><br>
-            <a href="${lieu.lien}">Voir les images</a>
-          `);
-      });
-    }
-  </script>
+  </div>
 </body>
 </html>
