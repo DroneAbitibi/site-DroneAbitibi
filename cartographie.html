@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Cartographie | Drone Abitibi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+      <img src="assets/logo_vert.svg" alt="Drone Abitibi">
+      <span>Drone Abitibi</span>
+    </a>
+
+    <nav>
+      <a href="galerie.html">
+        <span class="nav-full">Galerie</span>
+        <span class="nav-short">Galerie</span>
+      </a>
+
+      <a href="cartographie.html">
+        <span class="nav-full">Cartographie</span>
+        <span class="nav-short">Carto</span>
+      </a>
+
+      <a href="vie-privee.html">
+        <span class="nav-full">Vie&nbsp;privée</span>
+        <span class="nav-short">Vie&nbsp;privee</span>
+      </a>
+
+      <a href="index.html#contact">
+        <span class="nav-full">Contact</span>
+        <span class="nav-short">Contact</span>
+      </a>
+    </nav>
+  </header>
+
+<main>
+
+  <section class="page-hero">
+    <div>
+      <h1>Cartographie</h1>
+      <p>
+        Démonstration de couches cartographiques par photogrammétrie.
+      </p>
+    </div>
+  </section>
+
+  <section class="carto-section page-section">
+
+    <div class="map-layout">
+      <div id="map"></div>
+
+      <aside class="side-panel">
+        <h2>Couches disponibles</h2>
+
+        <p>
+          Cette carte interactive superpose plusieurs couches issues d'une même mission.
+        </p>
+
+        <ul class="layer-list">
+          <li>
+            <span class="chip">Base</span>
+            <strong>Orthophoto été</strong><br>
+            Mosaïque d'images aériennes géoréférencées.
+          </li>
+
+          <li>
+            <span class="chip">DTM</span>
+            <strong>Modèle numérique de terrain</strong><br>
+            Représentation du relief du sol nu.
+          </li>
+
+          <li>
+            <span class="chip">DSM</span>
+            <strong>Modèle numérique de surface</strong><br>
+            Relief incluant bâtiments, végétation et structures.
+          </li>
+        </ul>
+
+        <p class="note">
+          Les couches, styles de rendu et résolutions peuvent être adaptés selon les besoins :
+          suivi de chantier, volumétrie, inspection, planification ou documentation d’un site.
+        </p>
+      </aside>
+    </div>
+
+    <section class="report">
+      <h2>Résumé du traitement photogrammétrique</h2>
+
+      <p class="lead">
+        Présentation simplifiée des données de vol et de traitement pour une lecture rapide.
+      </p>
+
+      <div class="report-grid">
+        <div class="report-card">
+          <p class="eyebrow">Mission</p>
+          <h3>Vol du 29 août 2025</h3>
+          <ul>
+            <li>Décollage 09:34, atterrissage 09:40.</li>
+            <li>Durée : 6 min 27 s.</li>
+            <li>Traitement avec <strong>OpenDroneMap 3.5.6</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="report-card">
+          <p class="eyebrow">Zone couverte</p>
+          <h3>Environ 5 hectares</h3>
+          <ul>
+            <li>62 photos utilisées sur 64.</li>
+            <li>17 782 points reconstruits.</li>
+            <li>GSD moyen : <strong>4,2 cm/pixel</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="report-card">
+          <p class="eyebrow">Positionnement</p>
+          <h3>Référencé par GPS</h3>
+          <ul>
+            <li>Erreur GPS moyenne : 1,42 m.</li>
+            <li>CE90 : <strong>2,17 m</strong>.</li>
+            <li>LE90 : <strong>0,97 m</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="report-card">
+          <p class="eyebrow">Qualité 3D</p>
+          <h3>Ajustement des points</h3>
+          <ul>
+            <li>RMS X : 0,14 m.</li>
+            <li>RMS Y : 0,12 m.</li>
+            <li>RMS Z : 0,39 m.</li>
+          </ul>
+        </div>
+      </div>
+
+      <small>
+        La photogrammétrie permet de produire des orthophotos, des modèles numériques de terrain,
+        des modèles numériques de surface et d’autres données utiles à la lecture d’un site.
+      </small>
+    </section>
+
+  </section>
+
+</main>
+
+<footer id="contact" class="footer">
+  <div>
+    <strong>Drone Abitibi</strong><br>
+    <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a>
+  </div>
+
+  <div class="socials">
+
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
+        <img src="assets/tiktok.png" alt="TikTok">
+      </a>
+
+      <a href="https://www.facebook.com/droneabitibi" class="social-link">
+        <img src="assets/facebook.png" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/droneabitibi" class="social-link">
+        <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
+        <img src="assets/youtube.png" alt="YouTube">
+      </a>
+    </div>
+</footer>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin="">
+</script>
+
+<script>
+  var centerLat = 48.36437985117837;
+  var centerLng = -79.12920231790572;
+
+  var bounds = L.latLngBounds(
+    [48.35539673942846, -79.14272313921768],
+    [48.37336296292828, -79.11568149659377]
+  );
+
+  var map = L.map('map', {
+    center: [centerLat, centerLng],
+    zoom: 16,
+    minZoom: 15,
+    maxZoom: 20,
+    maxBounds: bounds,
+    maxBoundsViscosity: 1
+  });
+
+  var esriImagery = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {
+      maxZoom: 20,
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
+    }
+  ).addTo(map);
+
+  var osm = L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }
+  );
+
+  var orthophoto = L.tileLayer(
+    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
+    {
+      minZoom: 15,
+      maxZoom: 22,
+      tms: true,
+      attribution: '&copy; DV Drone - Orthophoto'
+    }
+  ).addTo(map);
+
+  var dtm = L.tileLayer(
+    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
+    {
+      minZoom: 15,
+      maxZoom: 22,
+      tms: true,
+      attribution: '&copy; DV Drone - DTM'
+    }
+  );
+
+  var dsm = L.tileLayer(
+    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
+    {
+      minZoom: 15,
+      maxZoom: 22,
+      tms: true,
+      attribution: '&copy; DV Drone - DSM'
+    }
+  );
+
+  var baseMaps = {
+    "Esri World Imagery": esriImagery,
+    "OpenStreetMap": osm
+  };
+
+  var overlayMaps = {
+    "Orthophoto": orthophoto,
+    "DTM": dtm,
+    "DSM": dsm
+  };
+
+  L.control.layers(baseMaps, overlayMaps, {
+    position: 'topright',
+    collapsed: true
+  }).addTo(map);
+
+  info.update = function (zoom) {
+    var z = zoom || map.getZoom();
+    this._div.innerHTML =
+      '<strong>Zoom : </strong>' + z +
+      '<br><strong>Coordonnées : </strong><span id="coords">-</span>';
+  };
+
+  info.addTo(map);
+
+  map.on('zoomend', function () {
+    info.update(map.getZoom());
+  });
+
+  map.on('mousemove', function (e) {
+    var lat = e.latlng.lat.toFixed(6);
+    var lng = e.latlng.lng.toFixed(6);
+    var coordsSpan = document.getElementById('coords');
+
+    if (coordsSpan) {
+      coordsSpan.textContent = lat + ', ' + lng;
+    }
+  });
+</script>
+
+</body>
+</html>

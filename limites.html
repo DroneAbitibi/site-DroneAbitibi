@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Limites et possibilités d'un vol de drone – Drone Abitibi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
     :root{
@@ -19,104 +20,55 @@
 
     *{box-sizing:border-box; margin:0; padding:0;}
 
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--page-bg);
-      color: var(--text-dark);
-      padding: 32px 16px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 780px;
-    }
-
-    .back {
-      display: inline-block;
-      margin-bottom: 24px;
-      font-size: 14px;
-      text-decoration: none;
-      color: var(--accent);
-    }
-    .back:hover { text-decoration: underline; }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
-      border: 1px solid var(--border);
-    }
-
-    .logo {
+    .logo-center {
       display: flex;
       justify-content: center;
       margin-bottom: 16px;
-    }
-    .logo img {
-      width: 200px;
-      height: auto;
-      opacity: 0.95;
-      display: block;
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 16px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--bg1);
-      text-align:center;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-top: 28px;
-      margin-bottom: 10px;
-      color: var(--bg1);
-      font-weight: 600;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      line-height: 1.6;
-      color: var(--text-muted);
-    }
-
-    .footer-note {
-      margin-top: 24px;
-      font-size: 14px;
-      color: #666;
-      text-align:center;
     }
   </style>
 </head>
 
 <body>
+
+  <header>
+
+  <a href="index.html" class="logo">
+    <img src="assets/logo_vert.svg" alt="Drone Abitibi">
+    <span>Drone Abitibi</span>
+  </a>
+
+  <nav>
+      <a href="galerie.html">
+        <span class="nav-full">Galerie</span>
+        <span class="nav-short">Galerie</span>
+      </a>
+
+      <a href="cartographie.html">
+        <span class="nav-full">Cartographie</span>
+        <span class="nav-short">Carto</span>
+      </a>
+
+      <a href="vie-privee.html">
+        <span class="nav-full">Vie&nbsp;privée</span>
+        <span class="nav-short">Vie&nbsp;privee</span>
+      </a>
+
+      <a href="index.html#contact">
+        <span class="nav-full">Contact</span>
+        <span class="nav-short">Contact</span>
+      </a>
+    </nav>
+
+  </header>
+  <main class="info-page">
   <div class="page">
 
-    <a href="index.html" class="back">← Retour à l'accueil</a>
-    
     <!-- Logo -->
-    <div class="logo">
+    <div class="logo-center">
       <img src="assets/logo.svg" alt="Logo Drone Abitibi">
     </div>
 
-    <div class="card">
+    <div class="paper">
 
       <h1>Limites et possibilités d'un vol de drone</h1>
 
@@ -269,5 +221,38 @@
       </div>
     </div>
   </div>
+  </main>
+
+  <footer id="contact" class="footer">
+
+    <div>
+      <strong>Drone Abitibi</strong><br>
+
+      <a href="mailto:info@droneabitibi.ca" class="footer-email">
+        info@droneabitibi.ca
+      </a>
+    </div>
+
+    <div class="socials">
+
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
+        <img src="assets/tiktok.png" alt="TikTok">
+      </a>
+
+      <a href="https://www.facebook.com/droneabitibi" class="social-link">
+        <img src="assets/facebook.png" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/droneabitibi" class="social-link">
+        <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
+        <img src="assets/youtube.png" alt="YouTube">
+      </a>
+
+    </div>
+
+  </footer>
 </body>
 </html>
