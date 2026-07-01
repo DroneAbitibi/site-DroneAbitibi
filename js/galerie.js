@@ -1,28 +1,28 @@
 const photos = [
-  { src: "portfolio/portfolio-21.jpg", titre: "Rouyn-Noranda", lieu: "Québec" },
-  { src: "portfolio/uqat-01.jpg", titre: "UQAT", lieu: "Rouyn-Noranda" },
-  { src: "portfolio/uqat-02.jpg", titre: "UQAT", lieu: "Témiscamingue" },
+  { src: "portfolio/portfolio-21.jpg", titre: "Centre-ville en hiver", lieu: "Rouyn-Noranda" },
+  { src: "portfolio/uqat-01.jpg", titre: "UQAT en hiver", lieu: "Rouyn-Noranda" },
+  { src: "portfolio/uqat-02.jpg", titre: "UQAT, Centre du Témiscamingue", lieu: "Notre-Dame-du-Nord" },
   { src: "portfolio/portfolio-09.jpg", titre: "Hôpital", lieu: "Rouyn-Noranda" },
 
   { src: "portfolio/portfolio-04.jpg", titre: "Parc de la Ribambelle", lieu: "Ville-Marie" },
-  { src: "portfolio/portfolio-01.jpg", titre: "Vue aérienne", lieu: "Abitibi-Témiscamingue" },
-  { src: "portfolio/portfolio-18.jpg", titre: "Rouyn-Noranda", lieu: "Québec" },
+  { src: "portfolio/portfolio-01.jpg", titre: "Stationnement du Cégep", lieu: "Rouyn-Noranda" },
+  { src: "portfolio/portfolio-18.jpg", titre: "Fonderie Horne", lieu: "Rouyn-Noranda" },
   { src: "portfolio/portfolio-07.jpg", titre: "Lac Osisko", lieu: "Rouyn-Noranda" },
 
-  { src: "portfolio/portfolio-19.jpg", titre: "UQAT", lieu: "Coucher du soleil" },
+  { src: "portfolio/portfolio-19.jpg", titre: "UQAT, Coucher du soleil", lieu: "Rouyn-Noranda" },
   { src: "portfolio/larriviere-01.jpg", titre: "Avenue Larrivière", lieu: "Rouyn-Noranda" },
   { src: "portfolio/portfolio-02.jpg", titre: "Parc à Fleur d'Eau", lieu: "Rouyn-Noranda" },
   { src: "portfolio/portfolio-03.jpg", titre: "Nid de l'Épervier", lieu: "Collines Kékéko" },
 
   { src: "portfolio/portfolio-06.jpg", titre: "Pont couvert", lieu: "St-Eugène-de-Guigues" },
   { src: "portfolio/pont-normetal-01.jpg", titre: "Pont couvert", lieu: "Normétal" },
-  { src: "portfolio/lac-paddle-01.jpg", titre: "Lac et paddle board", lieu: "Abitibi-Témiscamingue" },
+  { src: "portfolio/lac-paddle-01.jpg", titre: "Paddle board", lieu: "Lac St-Amand" },
   { src: "portfolio/maison-lac.jpg", titre: "Maison au bord du lac", lieu: "Témiscamingue" },
 
   { src: "portfolio/portfolio-10.jpg", titre: "Sentiers du lac Rouyn", lieu: "Rouyn-Noranda" },
   { src: "portfolio/portfolio-11.jpg", titre: "Lac Beaverhouse", lieu: "Dobie, Ontario" },
-  { src: "portfolio/reboisement-01.jpg", titre: "Reboisement", lieu: "Abitibi-Témiscamingue" },
-  { src: "portfolio/portfolio-14.jpg", titre: "Sentier sinueux", lieu: "Abitibi-Témiscamingue" }
+  { src: "portfolio/reboisement-01.jpg", titre: "Reboisement", lieu: "D'Alembert (Rouyn-Noranda)" },
+  { src: "portfolio/portfolio-14.jpg", titre: "Sentier sinueux", lieu: "D'Alembert (Rouyn-Noranda)" }
 ];
 
 const gallery = document.getElementById("gallery");
