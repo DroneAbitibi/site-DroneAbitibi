@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie | Drone Abitibi</title>
+  <meta name="description" content="Galerie de photos aériennes de l'Abitibi-Témiscamingue par Drone Abitibi.">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="assets/logo_vert.svg" alt="Drone Abitibi">
+      <span>Drone Abitibi</span>
+    </a>
+
+    <nav>
+      <a href="galerie.html">
+        <span class="nav-full">Galerie</span>
+        <span class="nav-short">Galerie</span>
+      </a>
+
+      <a href="cartographie.html">
+        <span class="nav-full">Cartographie</span>
+        <span class="nav-short">Carto</span>
+      </a>
+
+      <a href="vie-privee.html">
+        <span class="nav-full">Vie&nbsp;privée</span>
+        <span class="nav-short">Vie&nbsp;privee</span>
+      </a>
+
+      <a href="index.html#contact">
+        <span class="nav-full">Contact</span>
+        <span class="nav-short">Contact</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero galerie-hero">
+      <div>
+        <p class="eyebrow">Galerie</p>
+        <h1>Photos aériennes</h1>
+        <p>
+          Une sélection d'images captées au-dessus de l'Abitibi-Témiscamingue :
+          villages, paysages, lacs, quartiers et lieux emblématiques de la région.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+        <div class="masonry-gallery" id="gallery"></div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div>
+      <strong>Drone Abitibi</strong><br>
+      <a href="mailto:info@droneabitibi.ca" class="footer-email">
+        info@droneabitibi.ca
+      </a>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
+        <img src="assets/tiktok.png" alt="TikTok">
+      </a>
+
+      <a href="https://www.facebook.com/droneabitibi" class="social-link">
+        <img src="assets/facebook.png" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/droneabitibi" class="social-link">
+        <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
+        <img src="assets/youtube.png" alt="YouTube">
+      </a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img src="" alt="" id="lightboxImg">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <script src="js/galerie.js"></script>
+
+</body>
+</html>

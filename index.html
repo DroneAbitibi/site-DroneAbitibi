@@ -3,79 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Drone Abitibi est une initiative régionale en développement consacrée à l'imagerie aérienne et à la découverte de l'Abitibi-Témiscamingue vue des airs." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <title>Drone Abitibi</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
   <header>
-    <a href="index.html" class="logo" aria-label="Accueil Drone Abitibi">
+    <a href="#" class="logo">
       <img src="assets/logo_vert.svg" alt="Drone Abitibi">
       <span>Drone Abitibi</span>
     </a>
 
-    <nav aria-label="Navigation principale">
-      <a href="#realisations">Galerie</a>
-      <a href="photogrammetrie.html">Cartographie</a>
-      <a href="vie-privee.html">Vie privée</a>
-      <a href="#contact">Contact</a>
+    <nav>
+      <a href="galerie.html">
+        <span class="nav-full">Galerie</span>
+        <span class="nav-short">Galerie</span>
+      </a>
+
+      <a href="cartographie.html">
+        <span class="nav-full">Cartographie</span>
+        <span class="nav-short">Carto</span>
+      </a>
+
+      <a href="vie-privee.html">
+        <span class="nav-full">Vie&nbsp;privée</span>
+        <span class="nav-short">Vie&nbsp;privee</span>
+      </a>
+
+      <a href="#contact">
+        <span class="nav-full">Contact</span>
+        <span class="nav-short">Contact</span>
+      </a>
     </nav>
   </header>
 
   <main>
+
     <section class="hero">
+
       <div class="hero-content">
-        <img src="assets/logo_vert.svg" alt="Drone Abitibi" class="hero-logo">
+
+        <img src="assets/logo_vert.svg"
+          alt="Drone Abitibi"
+          class="hero-logo">
 
         <h1>Drone Abitibi</h1>
 
         <p>Mettre en valeur l'Abitibi-Témiscamingue vue des airs.</p>
 
         <div class="buttons">
-          <a href="#realisations" class="button">Explorer</a>
-          <a href="#services" class="button button-secondary">Services</a>
+          <a href="galerie.html" class="button">
+            Explorer
+          </a>
+          
+          <a href="limites.html" class="button">
+            Information
+          </a>
         </div>
       </div>
     </section>
 
     <section id="intro" class="intro page-section">
+
       <p class="intro-text">
         Drone Abitibi est une initiative régionale en développement, consacrée à l'imagerie aérienne
         et à la découverte du territoire de l'Abitibi-Témiscamingue.
       </p>
 
       <a href="mailto:info@droneabitibi.ca" class="contact-pill">
-        <span>✉</span>
-        info@droneabitibi.ca
+          <span>✉</span>
+          info@droneabitibi.ca
       </a>
+
     </section>
-
-    <section id="services" class="page-section services-section">
-      <h2 class="section-title">Services et possibilités</h2>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <h3>Imagerie aérienne</h3>
-          <p>Photos et vidéos aériennes pour mettre en valeur les paysages, les lieux et les projets régionaux.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Cartographie</h3>
-          <p>Orthophotos, relevés visuels et démonstrations cartographiques pour explorer le potentiel du territoire.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Projet régional</h3>
-          <p>Développement progressif d'une plateforme dédiée à l'Abitibi-Témiscamingue et à l'imagerie par drone.</p>
-        </article>
-      </div>
-    </section>
-
+    <!--
     <section id="realisations" class="page-section">
       <h2 class="section-title">Dernières réalisations</h2>
 
@@ -96,74 +102,76 @@
 
     <section id="carte" class="page-section">
       <h2 class="section-title">Explorer la région</h2>
-      <div id="map" aria-label="Carte des lieux filmés par Drone Abitibi"></div>
+
+      <div id="map"></div>
     </section>
+    -->
+
   </main>
 
   <footer id="contact" class="footer">
     <div>
       <strong>Drone Abitibi</strong><br>
-      <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a>
+        <a href="mailto:info@droneabitibi.ca" class="footer-email">
+          info@droneabitibi.ca
+        </a>
     </div>
 
-    <div class="socials" aria-label="Réseaux sociaux">
-      <a href="https://www.tiktok.com/@droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
+    <div class="socials">
+
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
         <img src="assets/tiktok.png" alt="TikTok">
       </a>
 
-      <a href="https://www.facebook.com/droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/droneabitibi" class="social-link">
         <img src="assets/facebook.png" alt="Facebook">
       </a>
 
-      <a href="https://www.instagram.com/droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/droneabitibi" class="social-link">
         <img src="assets/instagram.svg" alt="Instagram">
       </a>
 
-      <a href="https://www.youtube.com/@droneabitibi" class="social-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
         <img src="assets/youtube.png" alt="YouTube">
       </a>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const mapContainer = document.getElementById('map');
+    const map = L.map('map').setView([48.25, -79.05], 9);
 
-    if (mapContainer && window.L) {
-      const map = L.map('map').setView([48.25, -79.05], 9);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
 
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; OpenStreetMap'
-      }).addTo(map);
+    const lieux = [
+      {
+        nom: "Granada",
+        coords: [48.205, -79.040],
+        lien: "#"
+      },
+      {
+        nom: "Bellecombe",
+        coords: [48.163, -79.177],
+        lien: "#"
+      },
+      {
+        nom: "D'Alembert",
+        coords: [48.373, -79.127],
+        lien: "#"
+      }
+    ];
 
-      const lieux = [
-        {
-          nom: 'Granada',
-          coords: [48.205, -79.040],
-          lien: '#'
-        },
-        {
-          nom: 'Bellecombe',
-          coords: [48.163, -79.177],
-          lien: '#'
-        },
-        {
-          nom: "D'Alembert",
-          coords: [48.373, -79.127],
-          lien: '#'
-        }
-      ];
-
-      lieux.forEach(lieu => {
-        L.marker(lieu.coords)
-          .addTo(map)
-          .bindPopup(`
-            <strong>${lieu.nom}</strong><br>
-            <a href="${lieu.lien}">Voir les images</a>
-          `);
-      });
-    }
+    lieux.forEach(lieu => {
+      L.marker(lieu.coords)
+        .addTo(map)
+        .bindPopup(`
+          <strong>${lieu.nom}</strong><br>
+          <a href="${lieu.lien}">Voir les images</a>
+        `);
+    });
   </script>
+
 </body>
 </html>
