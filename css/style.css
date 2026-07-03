@@ -370,6 +370,14 @@ nav a:hover::after {
   border-bottom-color: #9fd18b;
 }
 
+.footer-company{
+  display:grid;
+  margin-top:-6px;
+  grid-template-columns:auto 1fr;
+  gap:4px 4px;
+  font-size:0.7rem;
+}
+
 .socials {
   display: flex;
   gap: 18px;
@@ -832,4 +840,41 @@ nav a:hover::after {
     #map{
         min-width:0;
     }
+}
+
+.credentials{
+    text-align:center;
+}
+
+.credentials-text{
+    color:#ddd;
+    font-size:1.05rem;
+    margin-bottom:28px;
+}
+
+.credentials-badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.credentials-badges span{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 18px;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
+
+    color:#ccc;
+    font-size:.95rem;
+}
+
+.credentials-badges svg{
+    width:18px;
+    height:18px;
+    stroke-width:2;
 }
