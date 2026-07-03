@@ -1,0 +1,36 @@
+#map{
+    width:100%;
+    min-width:100px;
+    height:520px;
+
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.info-box{
+    background:rgba(20,25,18,.9);
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:.8rem;
+    border:1px solid rgba(255,255,255,.16);
+}
+
+.info-box strong{
+    color:#9fd18b;
+}
+
+.leaflet-control-layers {
+  background: rgba(20,25,18,0.92);
+  color: var(--text);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.leaflet-control-layers-expanded {
+  padding: 0.4rem 0.5rem;
+}
+
+.leaflet-control-layers-separator {
+  border-top: 1px solid rgba(255,255,255,0.18);
+  margin: 0.25rem 0;
+}
