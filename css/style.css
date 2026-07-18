@@ -380,6 +380,14 @@ nav a:hover::after {
   margin-bottom:35px;
 }
 
+.intro-contact{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
 /* Footer */
 
 .footer {
