@@ -785,6 +785,19 @@ nav a:hover::after {
     }
 }
 
+.carto-hero {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("../images/carto.png");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .carto-section{
     max-width:1400px;
     margin:0 auto;
@@ -923,4 +936,119 @@ nav a:hover::after {
     width:18px;
     height:18px;
     stroke-width:2;
+}
+
+.service-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:36px;
+}
+
+.suivi-chantier-hero{
+  background:
+    linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.76)),
+    url("../images/suivi-chantier-hero.jpg") center/cover no-repeat;
+}
+
+.chantier-operation{
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.72)),
+    url("../images/suivi-chantier-operation.jpg") center/cover no-repeat;
+}
+
+.chantier-inspection {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("../images/inspection-tour-telecom.jpg");
+}
+
+.video-hero{
+  background:
+    linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.76)),
+    url("../images/video-hero.jpg") center/cover no-repeat;
+}
+
+.youtube-wrapper{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+
+  margin-top:24px;
+
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
+  background:#000;
+}
+
+.youtube-wrapper iframe{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:22px;
+  margin-top:28px;
+}
+
+.video-grid .report-card{
+  overflow:hidden;
+}
+
+.video-grid .youtube-wrapper{
+  margin-top:0;
+  margin-bottom:22px;
+}
+
+.video-grid .report-card > p,
+.video-grid .report-card > h3{
+  margin-left:0;
+}
+
+.youtube-short{
+  width:min(100%, 478px);
+  aspect-ratio:478 / 849;
+  margin:32px auto;
+  overflow:hidden;
+
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
+  background:#000;
+}
+
+.youtube-short iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media (max-width:800px){
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+.service-links .contact-pill img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
