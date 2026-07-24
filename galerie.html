@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <header>
     <a href="index.html" class="logo">
       <img src="assets/logo_vert.svg" alt="Drone Abitibi">
@@ -24,24 +23,23 @@
       </a>
 
       <a href="a-propos.html">
-        <span class="nav-full">À propos</span>
-        <span class="nav-short">À propos</span>
+        <span class="nav-full">À&nbsp;propos</span>
+        <span class="nav-short">À&nbsp;propos</span>
+      </a>
+
+      <a href="#contact">
+        <span class="nav-full">Contact</span>
+        <span class="nav-short">Contact</span>
       </a>
 
       <a href="vie-privee.html">
         <span class="nav-full">Vie&nbsp;privée</span>
-        <span class="nav-short">Vie&nbsp;privee</span>
-      </a>
-
-      <a href="index.html#contact">
-        <span class="nav-full">Contact</span>
-        <span class="nav-short">Contact</span>
+        <span class="nav-short"></span>
       </a>
     </nav>
   </header>
 
   <main>
-
     <section class="page-hero galerie-hero">
       <div>
         <p class="eyebrow">Galerie</p>
@@ -53,12 +51,30 @@
     </section>
 
     <section class="page-section">
-        <div class="masonry-gallery" id="gallery"></div>
+      <div class="masonry-gallery" id="gallery"></div>
     </section>
 
+    <section id="contact" class="intro page-section">
+      <p class="eyebrow">Nous joindre</p>
+      <p class="intro-text">
+        Un projet d'imagerie aérienne en tête? Contactez-nous pour en discuter.
+      </p>
+
+      <div class="intro-contact">
+        <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel">
+          <i data-lucide="mail"></i>
+          info@droneabitibi.ca
+        </a>
+
+        <a href="sms:+18199755777" class="contact-pill" aria-label="Envoyer un message texte">
+          <i data-lucide="message-square"></i>
+          (819) 975-5777
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer id="contact" class="footer">
+  <footer id="bas-page" class="footer">
     <div>
       <strong>Drone Abitibi</strong><br>
       <a href="mailto:info@droneabitibi.ca" class="footer-email">
@@ -97,7 +113,10 @@
     <p id="lightboxCaption"></p>
   </div>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
   <script src="js/galerie.js"></script>
-
 </body>
 </html>
