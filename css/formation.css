@@ -1,0 +1,260 @@
+.formation-hero {
+  min-height: 68vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, .34), rgba(0, 0, 0, .82)),
+    url("../images/drone-close-up.JPG") center 48% / cover no-repeat;
+}
+
+.formation-hero > div {
+  max-width: 900px;
+}
+
+.formation-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 26px;
+  padding: 10px 17px;
+  border: 1px solid rgba(159, 209, 139, .42);
+  border-radius: 999px;
+  background: rgba(11, 15, 13, .62);
+  color: #d9efd0;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  backdrop-filter: blur(10px);
+}
+
+.formation-status svg {
+  width: 18px;
+  height: 18px;
+  color: #9fd18b;
+}
+
+.formation-content {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 72px 5% 96px;
+}
+
+.formation-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 920px;
+  margin: 0 auto 72px;
+  padding: 20px 22px;
+  border: 1px solid rgba(159, 209, 139, .24);
+  border-radius: 16px;
+  background: rgba(159, 209, 139, .07);
+  color: rgba(255, 255, 255, .79);
+  line-height: 1.65;
+}
+
+.formation-notice svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #9fd18b;
+}
+
+.formation-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 78px);
+  align-items: center;
+  margin-bottom: 96px;
+}
+
+.formation-feature--reverse .formation-media {
+  order: 2;
+}
+
+.formation-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 22px;
+  background: #111;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+}
+
+.formation-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.formation-media--instruction img {
+  object-position: center 30%;
+}
+
+.formation-media--evaluation img {
+  object-position: center;
+}
+
+.formation-copy h2,
+.formation-programs h2,
+.formation-cta h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+
+.formation-copy p {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, .74);
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  line-height: 1.75;
+}
+
+.formation-copy strong {
+  color: white;
+}
+
+.formation-programs {
+  padding-top: 6px;
+  text-align: center;
+}
+
+.formation-programs > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, .7);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.formation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+  text-align: left;
+}
+
+.formation-card {
+  position: relative;
+  min-height: 230px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .045);
+}
+
+.formation-card svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 22px;
+  color: #9fd18b;
+}
+
+.formation-card h3 {
+  margin-bottom: 11px;
+  font-size: 1.17rem;
+  line-height: 1.3;
+}
+
+.formation-card p {
+  padding-bottom: 30px;
+  color: rgba(255, 255, 255, .66);
+  line-height: 1.6;
+}
+
+.formation-card span {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  color: #9fd18b;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.formation-cta {
+  max-width: 880px;
+  margin: 0 auto 92px;
+  padding: 24px 6% 0;
+  text-align: center;
+}
+
+.formation-cta p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 920px) {
+  .formation-feature,
+  .formation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formation-feature {
+    margin-bottom: 72px;
+  }
+
+  .formation-feature--reverse .formation-media {
+    order: 0;
+  }
+
+  .formation-media {
+    width: min(100%, 720px);
+    margin: 0 auto;
+  }
+
+  .formation-grid {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .formation-card {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .formation-hero {
+    min-height: 72vh;
+    background-position: 58% center;
+  }
+
+  .formation-status {
+    border-radius: 16px;
+    line-height: 1.4;
+  }
+
+  .formation-content {
+    padding-top: 52px;
+    padding-bottom: 72px;
+  }
+
+  .formation-notice {
+    margin-bottom: 54px;
+  }
+
+  .formation-feature {
+    gap: 28px;
+  }
+
+  .formation-media {
+    aspect-ratio: 5 / 4;
+    border-radius: 18px;
+  }
+
+  .formation-card {
+    padding: 24px;
+  }
+
+  .formation-card span {
+    left: 24px;
+  }
+}
