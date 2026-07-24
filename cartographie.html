@@ -203,7 +203,7 @@
 
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyNV1lvTlZBo="
+    integrity="sha256-20nQCchB9coqIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin="">
   </script>
 
@@ -287,6 +287,14 @@
       collapsed: true
     }).addTo(map);
 
+    var info = L.control({ position: 'bottomleft' });
+
+    info.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'info-box');
+      this.update();
+      return this._div;
+    };
+
     info.update = function (zoom) {
       var z = zoom || map.getZoom();
       this._div.innerHTML =
@@ -309,6 +317,10 @@
         coordsSpan.textContent = lat + ', ' + lng;
       }
     });
+
+    window.setTimeout(function () {
+      map.invalidateSize();
+    }, 0);
   </script>
 
   <script src="https://unpkg.com/lucide@latest"></script>
