@@ -19,6 +19,22 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .home-credentials {
+      margin-top: -38px;
+      padding-top: 18px;
+      padding-bottom: 92px;
+    }
+
+    @media (max-width: 700px) {
+      .home-credentials {
+        margin-top: -28px;
+        padding-top: 12px;
+        padding-bottom: 72px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -66,10 +82,10 @@
           <defs>
             <style>
               :root {
-                --vert-fonce:   #3e5c2c;   /* accent du site = couleur du drone */
-                --vert-accent:  #a9c48a;   /* text du site = hélices claires */
-                --texte:        #f5f7f5;   /* texte blanc cassé */
-                --trait:        #0f1c0f;   /* tracés noirs/verts très foncés */
+                --vert-fonce:   #3e5c2c;
+                --vert-accent:  #a9c48a;
+                --texte:        #f5f7f5;
+                --trait:        #0f1c0f;
               }
 
               .drone-body { fill: var(--vert-fonce); }
@@ -97,7 +113,6 @@
                 opacity: 0.95;
               }
 
-              /* Icônes de secteurs (traits verts sur fond blanc) */
               .icon-stroke {
                 fill: none;
                 stroke: var(--trait);
@@ -116,101 +131,62 @@
             </style>
           </defs>
 
-          <!-- Groupe du drone -->
           <g transform="translate(100,100)">
-
-            <!-- Bras en X -->
             <line x1="0" y1="0" x2="-35" y2="-35" class="drone-arm" />
-            <line x1="0" y1="0" x2="35"  y2="35"  class="drone-arm" />
-            <line x1="0" y1="0" x2="35"  y2="-35" class="drone-arm" />
-            <line x1="0" y1="0" x2="-35" y2="35"  class="drone-arm" />
+            <line x1="0" y1="0" x2="35" y2="35" class="drone-arm" />
+            <line x1="0" y1="0" x2="35" y2="-35" class="drone-arm" />
+            <line x1="0" y1="0" x2="-35" y2="35" class="drone-arm" />
 
-            <!-- Hélices (disques verts) -->
             <circle cx="-35" cy="-35" r="16" class="propeller" />
-            <circle cx="35"  cy="35"  r="16" class="propeller" />
-            <circle cx="35"  cy="-35" r="16" class="propeller" />
-            <circle cx="-35" cy="35"  r="16" class="propeller" />
+            <circle cx="35" cy="35" r="16" class="propeller" />
+            <circle cx="35" cy="-35" r="16" class="propeller" />
+            <circle cx="-35" cy="35" r="16" class="propeller" />
 
-            <!-- Halos de rotation -->
             <circle cx="-35" cy="-35" r="25" class="propeller-blur" />
-            <circle cx="35"  cy="35"  r="25" class="propeller-blur" />
-            <circle cx="35"  cy="-35" r="25" class="propeller-blur" />
-            <circle cx="-35" cy="35"  r="25" class="propeller-blur" />
+            <circle cx="35" cy="35" r="25" class="propeller-blur" />
+            <circle cx="35" cy="-35" r="25" class="propeller-blur" />
+            <circle cx="-35" cy="35" r="25" class="propeller-blur" />
 
-            <!-- Corps central du drone -->
             <circle cx="0" cy="0" r="13" class="drone-body" />
 
-            <!-- ========= Icônes par secteur ========= -->
-            <!-- Haut-gauche : Mine -->
             <g transform="translate(-35,-35)">
               <circle cx="0" cy="0" r="13" class="inner-circle" />
-
-              <!-- Pioche (gauche / descendante) -->
-              <path d="M -5 -5 L 6 6" class="icon-stroke" />          <!-- Manche -->
-              <path d="M -7 1 Q -6 -6 1 -7" class="icon-stroke" />   <!-- Tête arrondie -->
-
-              <!-- Pelle (droite / montante) -->
-              <path d="M -6 6 L 3 -3" class="icon-stroke" />   <!-- Manche -->
-              <path d="M 6 -6 L 4 -6 L 2 -4 L 4 -2 L 6 -4 Z" class="icon-stroke" />   <!-- Lame pointue -->
-
+              <path d="M -5 -5 L 6 6" class="icon-stroke" />
+              <path d="M -7 1 Q -6 -6 1 -7" class="icon-stroke" />
+              <path d="M -6 6 L 3 -3" class="icon-stroke" />
+              <path d="M 6 -6 L 4 -6 L 2 -4 L 4 -2 L 6 -4 Z" class="icon-stroke" />
             </g>
 
-
-            <!-- Haut-droite : Foresterie -->
             <g transform="translate(35,-35)">
               <circle cx="0" cy="0" r="13" class="inner-circle" />
-              <!-- Sapin simple -->
               <path d="M 0 -7 L -3 -2 L 3 -2 Z" class="icon-stroke" />
               <path d="M 0 -3 L -4 1 L 4 1 Z" class="icon-stroke" />
               <path d="M 0 0 L -5 4 L 5 4 Z" class="icon-stroke" />
-              <!-- Tronc -->
               <line x1="0" y1="4" x2="0" y2="7" class="icon-stroke" />
             </g>
 
-            <!-- Bas-gauche : Agriculture -->
             <g transform="translate(-35,35)">
-            <circle cx="0" cy="0" r="13" class="inner-circle" />
-
-            <!-- Tige -->
-            <path d="M 0 10 L 0 -4" class="icon-stroke" />
-
-            <!-- Grain du haut (inchangé) -->
-            <path d="M 0 -4 
-                  Q -3 -7 0 -10 
-                  Q 3 -7 0 -4"
-                class="icon-stroke" />
-
-            <path d="M 0 -1 Q 0 -6 -4 -6 Q -4 -2 0 -1" class="icon-stroke" />
-            <path d="M 0  3 Q 0 -2 -4 -2 Q -4  2 0  3" class="icon-stroke" />
-            <path d="M 0  7 Q 0  2 -4  2 Q -4  6 0  7" class="icon-stroke" />
-            <path d="M 0 -1 Q 0 -6  4 -6 Q  4 -2 0 -1" class="icon-stroke" />
-            <path d="M 0  3 Q 0 -2  4 -2 Q  4  2 0  3" class="icon-stroke" />
-            <path d="M 0  7 Q 0  2  4  2 Q  4  6 0  7" class="icon-stroke" />
+              <circle cx="0" cy="0" r="13" class="inner-circle" />
+              <path d="M 0 10 L 0 -4" class="icon-stroke" />
+              <path d="M 0 -4 Q -3 -7 0 -10 Q 3 -7 0 -4" class="icon-stroke" />
+              <path d="M 0 -1 Q 0 -6 -4 -6 Q -4 -2 0 -1" class="icon-stroke" />
+              <path d="M 0 3 Q 0 -2 -4 -2 Q -4 2 0 3" class="icon-stroke" />
+              <path d="M 0 7 Q 0 2 -4 2 Q -4 6 0 7" class="icon-stroke" />
+              <path d="M 0 -1 Q 0 -6 4 -6 Q 4 -2 0 -1" class="icon-stroke" />
+              <path d="M 0 3 Q 0 -2 4 -2 Q 4 2 0 3" class="icon-stroke" />
+              <path d="M 0 7 Q 0 2 4 2 Q 4 6 0 7" class="icon-stroke" />
             </g>
 
-            <!-- Bas-droite : Tourisme -->
             <g transform="translate(35,35)">
               <circle cx="0" cy="0" r="13" class="inner-circle" />
-              <!-- Tente -->
               <path d="M -5 4 L 0 -5 L 5 4 Z" class="icon-stroke" />
               <path d="M 0 -5 L 0 4" class="icon-stroke" />
-              <!-- Ligne de sol -->
               <line x1="-6" y1="4" x2="6" y2="4" class="icon-stroke" />
-              <!-- Petit soleil / étoile -->
               <circle cx="5" cy="-5" r="1.4" class="inner-circle" />
               <circle cx="5" cy="-5" r="1.4" class="icon-stroke" />
             </g>
-
           </g>
-            <!-- Texte
-          <text x="100" y="190"
-                text-anchor="middle"
-                class="logo-text">
-            DRONE ABITIBI
-          </text>  
-          -->
         </svg>
-
 
         <h1>Drone Abitibi</h1>
 
@@ -250,10 +226,10 @@
             class="button"
             target="_blank"
             rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" 
+            <svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="2 2 20 20"
                 fill="currentColor">
-                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12.06C22 6.53 17.5 2.04 12 2.04Z" />
             </svg>
             <span>Facebook</span>
           </a>
@@ -284,8 +260,7 @@
 
     </section>
 
-    <section class="page-section credentials"></section>
-
+    <section class="page-section credentials home-credentials" aria-label="Certifications et conformité">
       <div class="credentials-badges">
 
         <span>
@@ -314,7 +289,6 @@
         </span>
 
       </div>
-
     </section>
 
   </main>
@@ -353,45 +327,10 @@
     </div>
   </footer>
 
-  <script>
-    const map = L.map('map').setView([48.25, -79.05], 9);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
-
-    const lieux = [
-      {
-        nom: "Granada",
-        coords: [48.205, -79.040],
-        lien: "#"
-      },
-      {
-        nom: "Bellecombe",
-        coords: [48.163, -79.177],
-        lien: "#"
-      },
-      {
-        nom: "D'Alembert",
-        coords: [48.373, -79.127],
-        lien: "#"
-      }
-    ];
-
-    lieux.forEach(lieu => {
-      L.marker(lieu.coords)
-        .addTo(map)
-        .bindPopup(`
-          <strong>${lieu.nom}</strong><br>
-          <a href="${lieu.lien}">Voir les images</a>
-        `);
-    });
-  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
+  <script>
+    lucide.createIcons();
+  </script>
 
 </body>
 </html>
