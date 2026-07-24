@@ -36,12 +36,10 @@
         <span class="nav-full">Vie&nbsp;privée</span>
         <span class="nav-short"></span>
       </a>
-
     </nav>
   </header>
 
   <main>
-
     <section class="page-hero galerie-hero">
       <div>
         <p class="eyebrow">Galerie</p>
@@ -53,12 +51,15 @@
     </section>
 
     <section class="page-section">
-        <div class="masonry-gallery" id="gallery"></div>
+      <div class="masonry-gallery" id="gallery"></div>
     </section>
 
-    <section class="intro page-section">
-      <h2>Un projet en tête?</h2>
-      <p>Décrivez-nous le lieu, le type d'images recherché et l'objectif du mandat afin que nous puissions proposer une approche adaptée.</p>
+    <section id="contact" class="intro page-section">
+      <p class="eyebrow">Nous joindre</p>
+      <p class="intro-text">
+        Un projet d'imagerie aérienne en tête? Contactez-nous pour en discuter.
+      </p>
+
       <div class="intro-contact">
         <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel">
           <i data-lucide="mail"></i>
@@ -73,9 +74,7 @@
     </section>
   </main>
 
-  
-
-  <footer id="contact" class="footer">
+  <footer id="bas-page" class="footer">
     <div>
       <strong>Drone Abitibi</strong><br>
       <a href="mailto:info@droneabitibi.ca" class="footer-email">
@@ -114,7 +113,10 @@
     <p id="lightboxCaption"></p>
   </div>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
   <script src="js/galerie.js"></script>
-
 </body>
 </html>
