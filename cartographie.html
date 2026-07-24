@@ -2,302 +2,460 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Cartographie | Drone Abitibi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartographie | Drone Abitibi</title>
 
   <link
     rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
+    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
   >
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/map.css">
+  <style>
+    :root {
+      --bg1: #0f1c0f;
+      --bg2: #263321;
+      --text: #f5f7f5;
+      --muted: #dfe6de;
+      --accent: #a9c48a;
+      --panel: #1b2618;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, var(--bg2), var(--bg1));
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: .92rem;
+      opacity: .85;
+    }
+
+    .back:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand img {
+      width: 62px;
+      height: auto;
+    }
+
+    .brand span {
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      margin-bottom: 24px;
+    }
+
+    .intro h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .intro p {
+      max-width: 800px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    #map {
+      width: 100%;
+      height: 540px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: #172117;
+      box-shadow: 0 18px 45px rgba(0,0,0,.38);
+      overflow: hidden;
+    }
+
+    .map-error {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 24px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .side-panel,
+    .report {
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      background: rgba(12, 18, 12, .72);
+      box-shadow: 0 18px 45px rgba(0,0,0,.3);
+    }
+
+    .side-panel {
+      padding: 22px;
+    }
+
+    .side-panel h2,
+    .report h2 {
+      margin: 0 0 12px;
+    }
+
+    .side-panel p,
+    .side-panel li,
+    .report p,
+    .report li,
+    .report small {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .layer-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .layer-list li {
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 3px 9px;
+      border: 1px solid rgba(169,196,138,.4);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: .75rem;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      font-size: .84rem;
+    }
+
+    .report {
+      margin-top: 20px;
+      padding: 24px;
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .report-card {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .report-card h3 {
+      margin: 5px 0 10px;
+    }
+
+    .report-card .eyebrow {
+      margin: 0;
+      color: var(--accent);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .report-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .info-box {
+      padding: 8px 11px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      background: rgba(20,25,18,.92);
+      color: white;
+      font-size: .8rem;
+    }
+
+    .info-box strong {
+      color: var(--accent);
+    }
+
+    .leaflet-control-layers {
+      border: 1px solid rgba(255,255,255,.16) !important;
+      border-radius: 8px !important;
+      background: rgba(20,25,18,.94) !important;
+      color: white;
+    }
+
+    .leaflet-control-layers-expanded {
+      padding: 8px 10px;
+    }
+
+    @media (max-width: 900px) {
+      .map-layout {
+        grid-template-columns: 1fr;
+      }
+
+      #map {
+        height: 460px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 16px;
+      }
+
+      #map {
+        height: 380px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <a href="index.html" class="back">← Retour à l'accueil</a>
 
-<header>
-    <a href="index.html" class="logo">
+    <div class="brand">
       <img src="assets/logo_vert.svg" alt="Drone Abitibi">
       <span>Drone Abitibi</span>
-    </a>
+    </div>
 
-    <nav>
-      <a href="galerie.html">
-        <span class="nav-full">Galerie</span>
-        <span class="nav-short">Galerie</span>
-      </a>
-
-      <a href="a-propos.html">
-        <span class="nav-full">À propos</span>
-        <span class="nav-short">À propos</span>
-      </a>
-
-      <a href="vie-privee.html">
-        <span class="nav-full">Vie&nbsp;privée</span>
-        <span class="nav-short">Vie&nbsp;privee</span>
-      </a>
-
-      <a href="index.html#contact">
-        <span class="nav-full">Contact</span>
-        <span class="nav-short">Contact</span>
-      </a>
-    </nav>
-  </header>
-
-<main>
-
-  <section class="page-hero carto-hero">
-    <div>
+    <section class="intro">
       <h1>Cartographie</h1>
-
       <p>
-        Orthophotos, modèles numériques et autres données : découvrez quelques possibilités offertes par la photogrammétrie.
+        Cette carte interactive présente une orthophoto, un modèle numérique de terrain
+        et un modèle numérique de surface issus d'une mission de photogrammétrie.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <section class="carto-section page-section">
-
-    <div class="map-layout">
-      <div id="map"></div>
-
-      <aside class="side-panel">
-        <h2>Couches disponibles</h2>
-
-        <p>
-          Cette carte interactive superpose plusieurs couches issues d'une même mission.
-        </p>
-
-        <ul class="layer-list">
-          <li>
-            <span class="chip">Base</span>
-            <strong>Orthophoto été</strong><br>
-            Mosaïque d'images aériennes géoréférencées.
-          </li>
-
-          <li>
-            <span class="chip">DTM</span>
-            <strong>Modèle numérique de terrain</strong><br>
-            Représentation du relief du sol nu.
-          </li>
-
-          <li>
-            <span class="chip">DSM</span>
-            <strong>Modèle numérique de surface</strong><br>
-            Relief incluant bâtiments, végétation et structures.
-          </li>
-        </ul>
-
-        <p class="note">
-          Les couches, styles de rendu et résolutions peuvent être adaptés selon les besoins :
-          suivi de chantier, volumétrie, inspection, planification ou documentation d’un site.
-        </p>
-      </aside>
-    </div>
-
-    <section class="report">
-      <h2>Aperçu de mission</h2>
-
-      <p class="lead">
-        Les principaux indicateurs de vol, de traitement et de qualité des données produits lors de cette mission.
-      </p>
-
-      <div class="report-grid">
-        <div class="report-card">
-          <p class="eyebrow">Mission</p>
-          <h3>Vol du 29 août 2025</h3>
-          <ul>
-            <li>Décollage 09:34, atterrissage 09:40.</li>
-            <li>Durée : 6 min 27 s.</li>
-            <li>Traitement avec <strong>OpenDroneMap 3.5.6</strong>.</li>
-          </ul>
-        </div>
-
-        <div class="report-card">
-          <p class="eyebrow">Zone couverte</p>
-          <h3>Environ 5 hectares</h3>
-          <ul>
-            <li>62 photos utilisées sur 64.</li>
-            <li>17 782 points reconstruits.</li>
-            <li>GSD moyen : <strong>4,2 cm/pixel</strong>.</li>
-          </ul>
-        </div>
-
-        <div class="report-card">
-          <p class="eyebrow">Positionnement</p>
-          <h3>Référencé par GPS</h3>
-          <ul>
-            <li>Erreur GPS moyenne : 1,42 m.</li>
-            <li>CE90 : <strong>2,17 m</strong>.</li>
-            <li>LE90 : <strong>0,97 m</strong>.</li>
-          </ul>
-        </div>
-
-        <div class="report-card">
-          <p class="eyebrow">Qualité 3D</p>
-          <h3>Ajustement des points</h3>
-          <ul>
-            <li>RMS X : 0,14 m.</li>
-            <li>RMS Y : 0,12 m.</li>
-            <li>RMS Z : 0,39 m.</li>
-          </ul>
+    <section class="map-layout">
+      <div id="map">
+        <div id="map-error" class="map-error">
+          La bibliothèque cartographique n'a pas pu être chargée. Vérifiez la connexion Internet,
+          puis rechargez la page.
         </div>
       </div>
 
-      <small>
-        La photogrammétrie permet de produire des orthophotos, des modèles numériques de terrain,
-        des modèles numériques de surface et d'autres données utiles à la lecture d’un site.
-      </small>
+      <aside class="side-panel">
+        <h2>Couches disponibles</h2>
+        <p>Utilisez le sélecteur dans le coin supérieur droit de la carte.</p>
+
+        <ul class="layer-list">
+          <li><span class="chip">Base</span><strong>Imagerie Esri</strong> — fond satellite.</li>
+          <li><span class="chip">Ortho</span><strong>Orthophoto</strong> — mosaïque géoréférencée.</li>
+          <li><span class="chip">DTM</span><strong>Modèle numérique de terrain</strong> — relief du sol.</li>
+          <li><span class="chip">DSM</span><strong>Modèle numérique de surface</strong> — relief incluant les objets.</li>
+        </ul>
+
+        <p class="note">
+          Le fond Esri est affiché par défaut afin que la carte demeure visible même si une couche
+          photogrammétrique est temporairement indisponible.
+        </p>
+      </aside>
     </section>
 
-  </section>
+    <section class="report">
+      <h2>Aperçu de mission</h2>
+      <p>Quelques indicateurs provenant du traitement photogrammétrique présenté.</p>
 
-</main>
+      <div class="report-grid">
+        <article class="report-card">
+          <p class="eyebrow">Mission</p>
+          <h3>29 août 2025</h3>
+          <ul>
+            <li>Durée : 6 min 27 s.</li>
+            <li>OpenDroneMap 3.5.6.</li>
+          </ul>
+        </article>
 
-<footer id="contact" class="footer">
-  <div>
-    <strong>Drone Abitibi</strong><br>
-    <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a>
-  </div>
+        <article class="report-card">
+          <p class="eyebrow">Zone couverte</p>
+          <h3>Environ 5 hectares</h3>
+          <ul>
+            <li>62 photos utilisées.</li>
+            <li>GSD moyen : 4,2 cm/pixel.</li>
+          </ul>
+        </article>
 
-  <div class="footer-company">
-      <span>NEQ</span><span>: 2281285231</span>
-      <span>TPS</span><span>: 771041639 RT0001</span>
-      <span>TVQ</span><span>: 4018433813 TQ0001</span>
-    </div>
+        <article class="report-card">
+          <p class="eyebrow">Positionnement</p>
+          <h3>Référencé par GPS</h3>
+          <ul>
+            <li>Erreur moyenne : 1,42 m.</li>
+            <li>CE90 : 2,17 m.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
 
-  <div class="socials">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (function () {
+      var errorBox = document.getElementById('map-error');
 
-      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
-        <img src="assets/tiktok.png" alt="TikTok">
-      </a>
+      if (typeof L === 'undefined') {
+        errorBox.style.display = 'flex';
+        return;
+      }
 
-      <a href="https://www.facebook.com/droneabitibi" class="social-link">
-        <img src="assets/facebook.png" alt="Facebook">
-      </a>
+      try {
+        var center = [48.36437985117837, -79.12920231790572];
+        var bounds = L.latLngBounds(
+          [48.35539673942846, -79.14272313921768],
+          [48.37336296292828, -79.11568149659377]
+        );
 
-      <a href="https://www.instagram.com/droneabitibi" class="social-link">
-        <img src="assets/instagram.svg" alt="Instagram">
-      </a>
+        var map = L.map('map', {
+          center: center,
+          zoom: 16,
+          minZoom: 15,
+          maxZoom: 20,
+          maxBounds: bounds,
+          maxBoundsViscosity: 1
+        });
 
-      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
-        <img src="assets/youtube.png" alt="YouTube">
-      </a>
-    </div>
-</footer>
+        var esri = L.tileLayer(
+          'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          {
+            maxZoom: 20,
+            attribution: 'Tiles &copy; Esri'
+          }
+        ).addTo(map);
 
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9coqIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin="">
-</script>
+        var osm = L.tileLayer(
+          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+          }
+        );
 
-<script>
-  var centerLat = 48.36437985117837;
-  var centerLng = -79.12920231790572;
+        var orthophoto = L.tileLayer(
+          'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
+          {
+            minZoom: 15,
+            maxZoom: 22,
+            tms: true,
+            attribution: '&copy; Drone Abitibi — Orthophoto'
+          }
+        );
 
-  var bounds = L.latLngBounds(
-    [48.35539673942846, -79.14272313921768],
-    [48.37336296292828, -79.11568149659377]
-  );
+        var dtm = L.tileLayer(
+          'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
+          {
+            minZoom: 15,
+            maxZoom: 22,
+            tms: true,
+            attribution: '&copy; Drone Abitibi — DTM'
+          }
+        );
 
-  var map = L.map('map', {
-    center: [centerLat, centerLng],
-    zoom: 16,
-    minZoom: 15,
-    maxZoom: 20,
-    maxBounds: bounds,
-    maxBoundsViscosity: 1
-  });
+        var dsm = L.tileLayer(
+          'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
+          {
+            minZoom: 15,
+            maxZoom: 22,
+            tms: true,
+            attribution: '&copy; Drone Abitibi — DSM'
+          }
+        );
 
-  var esriImagery = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    {
-      maxZoom: 20,
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics'
-    }
-  ).addTo(map);
+        L.control.layers(
+          {
+            'Imagerie Esri': esri,
+            'OpenStreetMap': osm
+          },
+          {
+            'Orthophoto': orthophoto,
+            'Modèle de terrain (DTM)': dtm,
+            'Modèle de surface (DSM)': dsm
+          },
+          {
+            position: 'topright',
+            collapsed: false
+          }
+        ).addTo(map);
 
-  var osm = L.tileLayer(
-    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-    {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }
-  );
+        var info = L.control({ position: 'bottomleft' });
 
-  var orthophoto = L.tileLayer(
-    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_ortho/{z}/{x}/{y}.png',
-    {
-      minZoom: 15,
-      maxZoom: 22,
-      tms: true,
-      attribution: '&copy; DV Drone - Orthophoto'
-    }
-  ).addTo(map);
+        info.onAdd = function () {
+          this._div = L.DomUtil.create('div', 'info-box');
+          this.update();
+          return this._div;
+        };
 
-  var dtm = L.tileLayer(
-    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dtm/{z}/{x}/{y}.png',
-    {
-      minZoom: 15,
-      maxZoom: 22,
-      tms: true,
-      attribution: '&copy; DV Drone - DTM'
-    }
-  );
+        info.update = function () {
+          this._div.innerHTML =
+            '<strong>Zoom :</strong> ' + map.getZoom() +
+            '<br><strong>Coordonnées :</strong> <span id="coords">—</span>';
+        };
 
-  var dsm = L.tileLayer(
-    'https://dvdrone-datasets.s3.ca-central-1.amazonaws.com/test001/tiles_dsm/{z}/{x}/{y}.png',
-    {
-      minZoom: 15,
-      maxZoom: 22,
-      tms: true,
-      attribution: '&copy; DV Drone - DSM'
-    }
-  );
+        info.addTo(map);
 
-  var baseMaps = {
-    "Esri World Imagery": esriImagery,
-    "OpenStreetMap": osm
-  };
+        map.on('zoomend', function () {
+          info.update();
+        });
 
-  var overlayMaps = {
-    "Orthophoto": orthophoto,
-    "DTM": dtm,
-    "DSM": dsm
-  };
+        map.on('mousemove', function (event) {
+          var coords = document.getElementById('coords');
+          if (coords) {
+            coords.textContent =
+              event.latlng.lat.toFixed(6) + ', ' + event.latlng.lng.toFixed(6);
+          }
+        });
 
-  L.control.layers(baseMaps, overlayMaps, {
-    position: 'topright',
-    collapsed: true
-  }).addTo(map);
-
-  info.update = function (zoom) {
-    var z = zoom || map.getZoom();
-    this._div.innerHTML =
-      '<strong>Zoom : </strong>' + z +
-      '<br><strong>Coordonnées : </strong><span id="coords">-</span>';
-  };
-
-  info.addTo(map);
-
-  map.on('zoomend', function () {
-    info.update(map.getZoom());
-  });
-
-  map.on('mousemove', function (e) {
-    var lat = e.latlng.lat.toFixed(6);
-    var lng = e.latlng.lng.toFixed(6);
-    var coordsSpan = document.getElementById('coords');
-
-    if (coordsSpan) {
-      coordsSpan.textContent = lat + ', ' + lng;
-    }
-  });
-</script>
-
+        window.setTimeout(function () {
+          map.invalidateSize();
+        }, 100);
+      } catch (error) {
+        console.error('Erreur Leaflet :', error);
+        errorBox.style.display = 'flex';
+        errorBox.textContent = 'La carte n’a pas pu être initialisée : ' + error.message;
+      }
+    }());
+  </script>
 </body>
 </html>
