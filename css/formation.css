@@ -117,6 +117,8 @@
 }
 
 .formation-programs {
+  max-width: 960px;
+  margin: 0 auto;
   padding-top: 6px;
   text-align: center;
 }
@@ -131,9 +133,10 @@
 
 .formation-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
   gap: 18px;
-  max-width: 960px;
+  width: 100%;
   margin: 32px auto 0;
   text-align: left;
 }
@@ -165,10 +168,14 @@
 
 .formation-group li {
   position: relative;
-  padding: 12px 0 12px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  padding: 14px 0 14px 18px;
   border-top: 1px solid rgba(255, 255, 255, .08);
-  color: rgba(255, 255, 255, .74);
-  line-height: 1.4;
+  color: rgba(255, 255, 255, .82);
+  line-height: 1.45;
 }
 
 .formation-group li::before {
@@ -242,9 +249,24 @@
   line-height: 1.65;
 }
 
+.formation-requirement {
+  margin-left: 0;
+  font-size: .8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .5);
+}
+
+.formation-code {
+  display: inline-block;
+  margin-right: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #6f7d72;
+}
+
 @media (max-width: 920px) {
-  .formation-feature,
-  .formation-list {
+  .formation-feature {
     grid-template-columns: 1fr;
   }
 
@@ -262,7 +284,7 @@
   }
 
   .formation-list {
-    max-width: 720px;
+    grid-template-columns: minmax(0, 720px);
   }
 }
 
