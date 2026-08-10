@@ -20,12 +20,17 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="Accueil Drone Abitibi">
       <img src="assets/logo_vert.svg" alt="Drone Abitibi">
       <span>Drone Abitibi</span>
     </a>
 
-    <nav>
+    <nav aria-label="Navigation principale">
+      <a href="index.html#services">
+        <span class="nav-full">Services</span>
+        <span class="nav-short">Services</span>
+      </a>
+
       <a href="galerie.html">
         <span class="nav-full">Galerie</span>
         <span class="nav-short">Galerie</span>
@@ -39,11 +44,6 @@
       <a href="#contact">
         <span class="nav-full">Contact</span>
         <span class="nav-short">Contact</span>
-      </a>
-
-      <a href="vie-privee.html">
-        <span class="nav-full">Vie&nbsp;privée</span>
-        <span class="nav-short"></span>
       </a>
     </nav>
   </header>
@@ -121,60 +121,27 @@
         </div>
 
         <div class="formation-notice" role="note">
-        <i data-lucide="info"></i>
-        <p>
-          Cette offre est actuellement en développement. Les formations et les révisions en vol
-          présentées sur cette page ne sont pas encore disponibles.
-        </p>
-      </div>
+          <i data-lucide="info"></i>
+          <p>
+            Cette offre est actuellement en développement. Les formations et les révisions en vol
+            présentées sur cette page ne sont pas encore disponibles.
+          </p>
+        </div>
       </article>
 
       <section class="formation-programs" aria-labelledby="formations-prevues">
         <p class="eyebrow">À venir</p>
         <h2 id="formations-prevues">Formations prévues</h2>
-        <p>
-          Les détails, les durées et les modalités seront annoncés progressivement.
-        </p>
+        <p>Les détails, les durées et les modalités seront annoncés progressivement.</p>
 
         <div class="formation-list">
           <article class="formation-group">
-            <h3>
-              <i data-lucide="graduation-cap"></i>
-              Formations à venir
-            </h3>
-
+            <h3><i data-lucide="graduation-cap"></i>Formations à venir</h3>
             <ul>
-              <li>
-                <span class="formation-code">DA-110</span>
-                Utilisation sécuritaire des microdrones en entreprise (&lt;&nbsp;250&#8239;g)
-                <span class="formation-requirement">
-                  Aucun certificat de pilote requis
-                </span>
-              </li>
-
-              <li>
-                <span class="formation-code">DA-210</span>
-                Préparation au certificat de pilote - opérations de base
-                <span class="formation-requirement">
-                  Contenu aligné sur le TP 15263
-                </span>
-              </li>
-
-              <li>
-                <span class="formation-code">DA-220</span>
-                Préparation au certificat de pilote - opérations avancées
-                <span class="formation-requirement">
-                  Contenu aligné sur le TP 15263
-                </span>
-              </li>
-
-              <li>
-                <span class="formation-code">DA-221</span>
-                Révision en vol - opérations avancées
-                <span class="formation-requirement">
-                  Étape requise pour le certificat de pilote - opérations avancées
-                </span>
-              </li>
+              <li><span class="formation-code">DA-110</span> Utilisation sécuritaire des microdrones en entreprise (&lt;&nbsp;250&#8239;g)<span class="formation-requirement">Aucun certificat de pilote requis</span></li>
+              <li><span class="formation-code">DA-210</span> Préparation au certificat de pilote - opérations de base<span class="formation-requirement">Contenu aligné sur le TP 15263</span></li>
+              <li><span class="formation-code">DA-220</span> Préparation au certificat de pilote - opérations avancées<span class="formation-requirement">Contenu aligné sur le TP 15263</span></li>
+              <li><span class="formation-code">DA-221</span> Révision en vol - opérations avancées<span class="formation-requirement">Étape requise pour le certificat de pilote - opérations avancées</span></li>
             </ul>
           </article>
         </div>
@@ -189,58 +156,26 @@
 
     <section id="contact" class="intro page-section">
       <p class="eyebrow">Nous joindre</p>
-      <p class="intro-text">
-        Intéressé par les formations à venir? Contactez-nous pour en discuter.
-      </p>
-
+      <p class="intro-text">Intéressé par les formations à venir? Contactez-nous pour en discuter.</p>
       <div class="intro-contact">
-        <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel">
-          <i data-lucide="mail"></i>
-          info@droneabitibi.ca
-        </a>
-
-        <a href="sms:+18199755777" class="contact-pill" aria-label="Envoyer un message texte">
-          <i data-lucide="message-square"></i>
-          (819) 975-5777
-        </a>
+        <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel"><i data-lucide="mail"></i>info@droneabitibi.ca</a>
+        <a href="sms:+18199755777" class="contact-pill" aria-label="Envoyer un message texte"><i data-lucide="message-square"></i>(819) 975-5777</a>
       </div>
     </section>
   </main>
 
   <footer id="bas-page" class="footer">
-    <div>
-      <strong>Drone Abitibi</strong><br>
-      <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a>
-    </div>
-
-    <div class="footer-company">
-      <span>NEQ</span><span>: 2281285231</span>
-      <span>TPS</span><span>: 771041639 RT0001</span>
-      <span>TVQ</span><span>: 4018433813 TQ0001</span>
-    </div>
-
+    <div><strong>Drone Abitibi</strong><br><a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a></div>
+    <div class="footer-company"><span>NEQ</span><span>: 2281285231</span><span>TPS</span><span>: 771041639 RT0001</span><span>TVQ</span><span>: 4018433813 TQ0001</span></div>
     <div class="socials">
-      <a href="https://www.tiktok.com/@droneabitibi" class="social-link" target="_blank" rel="noopener">
-        <img src="assets/tiktok.svg" alt="TikTok">
-      </a>
-
-      <a href="https://www.facebook.com/droneabitibi" class="social-link" target="_blank" rel="noopener">
-        <img src="assets/facebook.svg" alt="Facebook">
-      </a>
-
-      <a href="https://www.instagram.com/droneabitibi" class="social-link" target="_blank" rel="noopener">
-        <img src="assets/instagram.svg" alt="Instagram">
-      </a>
-
-      <a href="https://www.youtube.com/@droneabitibi" class="social-link" target="_blank" rel="noopener">
-        <img src="assets/youtube.png" alt="YouTube">
-      </a>
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link" target="_blank" rel="noopener"><img src="assets/tiktok.svg" alt="TikTok"></a>
+      <a href="https://www.facebook.com/droneabitibi" class="social-link" target="_blank" rel="noopener"><img src="assets/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/droneabitibi" class="social-link" target="_blank" rel="noopener"><img src="assets/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link" target="_blank" rel="noopener"><img src="assets/youtube.png" alt="YouTube"></a>
     </div>
   </footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
