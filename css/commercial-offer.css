@@ -98,11 +98,11 @@
 }
 
 .service-card-chantier {
-  background-image: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)), url("../images/bellecombe_1600px.jpg");
+  background-image: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)), url("../images/suivi-chantier-hero.jpg");
 }
 
 .service-card-carto {
-  background-image: url("../images/carte.jpg");
+  background-image: url("../images/carto.png");
 }
 
 .service-card-content {
