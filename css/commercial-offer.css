@@ -7,7 +7,7 @@
 }
 
 .home-hero-logo {
-  width: 118px;
+  width: 360px;
   height: auto;
   margin-bottom: 26px;
   filter: drop-shadow(0 8px 24px rgba(0,0,0,.35));
@@ -235,7 +235,7 @@
   }
 
   .home-hero-logo {
-    width: 86px;
+    width: 260px;
     margin-bottom: 20px;
   }
 
