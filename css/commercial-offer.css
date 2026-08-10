@@ -1,0 +1,262 @@
+.home-hero {
+  min-height: 88svh;
+}
+
+.home-hero-content {
+  width: min(960px, 100%);
+}
+
+.home-hero-logo {
+  width: 118px;
+  height: auto;
+  margin-bottom: 26px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.35));
+}
+
+.home-hero-content h1 {
+  margin-top: 0;
+}
+
+.home-hero-lead {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.home-actions {
+  margin-top: 8px;
+}
+
+.button-primary {
+  background: #f5f7f5;
+  color: #0b0f0d;
+}
+
+.button-primary:hover {
+  background: #9fd18b;
+  border-color: #9fd18b;
+}
+
+.home-services {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.home-section-heading {
+  max-width: 760px;
+  margin-bottom: 38px;
+}
+
+.home-section-heading h2,
+.home-recurring h2,
+.home-training h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.home-section-heading > p:last-child,
+.home-recurring p,
+.home-training p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,.75);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.09);
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(6,10,8,.94) 8%, rgba(6,10,8,.54) 58%, rgba(6,10,8,.20));
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(159,209,139,.45);
+}
+
+.service-card-photo {
+  background-image: url("../images/granada_1600px.jpg");
+}
+
+.service-card-chantier {
+  background-image: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)), url("../images/suivi-chantier-hero.jpg");
+}
+
+.service-card-carto {
+  background-image: url("../images/carto.png");
+}
+
+.service-card-content {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 30px;
+}
+
+.service-card-content > svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 18px;
+  color: #9fd18b;
+}
+
+.service-card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+}
+
+.service-card p:not(.eyebrow) {
+  line-height: 1.55;
+  color: rgba(255,255,255,.82);
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.service-link svg {
+  width: 17px;
+  height: 17px;
+  transition: transform .2s ease;
+}
+
+.service-card:hover .service-link svg {
+  transform: translateX(4px);
+}
+
+.home-recurring {
+  padding-top: 28px;
+  padding-bottom: 86px;
+}
+
+.home-recurring-inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 42px;
+  padding: 38px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  background: rgba(255,255,255,.035);
+}
+
+.home-recurring-inner > div {
+  max-width: 720px;
+}
+
+.home-recurring .pill-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-recurring .pill-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.home-credentials {
+  padding-top: 22px;
+  padding-bottom: 86px;
+}
+
+.home-training {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 18px;
+  padding-bottom: 72px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.home-training > div {
+  max-width: 690px;
+}
+
+.home-training .text-link {
+  white-space: nowrap;
+  padding-bottom: 7px;
+}
+
+.home-contact {
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 360px;
+  }
+
+  .home-recurring-inner,
+  .home-training {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-hero {
+    min-height: 82svh;
+    padding-top: 105px;
+  }
+
+  .home-hero-logo {
+    width: 86px;
+    margin-bottom: 20px;
+  }
+
+  .home-services {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .service-card {
+    min-height: 390px;
+  }
+
+  .service-card-content {
+    padding: 24px;
+  }
+
+  .home-recurring-inner {
+    padding: 28px;
+  }
+
+  .home-credentials {
+    padding-bottom: 68px;
+  }
+}

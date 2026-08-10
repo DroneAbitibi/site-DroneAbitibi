@@ -3,49 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="facebook-domain-verification" content="j6zek3jq75tlqeu5cd7flzxp6fduko" />
-  <meta name="description" content="Imagerie aérienne en Abitibi-Témiscamingue par Drone Abitibi.">
+  <meta name="facebook-domain-verification" content="j6zek3jq75tlqeu5cd7flzxp6fduko">
+
+  <meta name="description" content="Services d'imagerie aérienne par drone en Abitibi-Témiscamingue : photographie et vidéo, suivi de chantier et cartographie.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Drone Abitibi">
-  <meta property="og:description" content="Mettre en valeur l'Abitibi-Témiscamingue vue des airs.">
+  <meta property="og:title" content="Drone Abitibi | Imagerie aérienne en Abitibi-Témiscamingue">
+  <meta property="og:description" content="Photographie et vidéo aérienne, suivi de chantier et cartographie par drone en Abitibi-Témiscamingue.">
   <meta property="og:url" content="https://droneabitibi.ca/">
   <meta property="og:image" content="https://droneabitibi.ca/assets/og-drone-abitibi.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>Drone Abitibi</title>
-  <!-- Icônes -->
+
+  <title>Drone Abitibi | Imagerie aérienne</title>
+
   <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    .home-credentials {
-      margin-top: -38px;
-      padding-top: 18px;
-      padding-bottom: 92px;
-    }
-
-    @media (max-width: 700px) {
-      .home-credentials {
-        margin-top: -28px;
-        padding-top: 12px;
-        padding-bottom: 72px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/commercial-offer.css">
 </head>
 
 <body>
-
   <header>
-    <a href="#" class="logo">
+    <a href="index.html" class="logo" aria-label="Accueil Drone Abitibi">
       <img src="assets/logo_vert.svg" alt="Drone Abitibi">
       <span>Drone Abitibi</span>
     </a>
 
-    <nav>
+    <nav aria-label="Navigation principale">
+      <a href="#services">
+        <span class="nav-full">Services</span>
+        <span class="nav-short">Services</span>
+      </a>
+
       <a href="galerie.html">
         <span class="nav-full">Galerie</span>
         <span class="nav-short">Galerie</span>
@@ -60,264 +51,109 @@
         <span class="nav-full">Contact</span>
         <span class="nav-short">Contact</span>
       </a>
-
-      <a href="vie-privee.html">
-        <span class="nav-full">Vie&nbsp;privée</span>
-        <span class="nav-short"></span>
-      </a>
-
     </nav>
   </header>
 
   <main>
+    <section class="hero home-hero">
+      <div class="hero-content home-hero-content">
+        <img class="home-hero-logo" src="assets/logo_vert.svg" alt="">
 
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <svg class="hero-logo" viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-labelledby="title desc">
-          <title id="title">Logo Drone Abitibi</title>
-
-          <defs>
-            <style>
-              :root {
-                --vert-fonce:   #3e5c2c;   /* accent du site = couleur du drone */
-                --vert-accent:  #a9c48a;   /* text du site = hélices claires */
-                --texte:        #f5f7f5;   /* texte blanc cassé */
-                --trait:        #0f1c0f;   /* tracés noirs/verts très foncés */
-              }
-
-              .drone-body { fill: var(--vert-fonce); }
-
-              .drone-arm {
-                stroke: var(--vert-fonce);
-                stroke-width: 5;
-                stroke-linecap: round;
-              }
-
-              .propeller {
-                fill: var(--vert-accent);
-                opacity: 0.95;
-              }
-
-              .propeller-blur {
-                fill: none;
-                stroke: var(--vert-accent);
-                stroke-width: 4;
-                opacity: 0.20;
-              }
-
-              .inner-circle {
-                fill: #ffffff;
-                opacity: 0.95;
-              }
-
-              /* Icônes de secteurs (traits verts sur fond blanc) */
-              .icon-stroke {
-                fill: none;
-                stroke: var(--trait);
-                stroke-width: 1.6;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-              }
-
-              .logo-text {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-                font-size: 20px;
-                font-weight: 700;
-                letter-spacing: 3px;
-                fill: var(--texte);
-              }
-            </style>
-          </defs>
-
-          <!-- Groupe du drone -->
-          <g transform="translate(100,100)">
-
-            <!-- Bras en X -->
-            <line x1="0" y1="0" x2="-35" y2="-35" class="drone-arm" />
-            <line x1="0" y1="0" x2="35"  y2="35"  class="drone-arm" />
-            <line x1="0" y1="0" x2="35"  y2="-35" class="drone-arm" />
-            <line x1="0" y1="0" x2="-35" y2="35"  class="drone-arm" />
-
-            <!-- Hélices (disques verts) -->
-            <circle cx="-35" cy="-35" r="16" class="propeller" />
-            <circle cx="35"  cy="35"  r="16" class="propeller" />
-            <circle cx="35"  cy="-35" r="16" class="propeller" />
-            <circle cx="-35" cy="35"  r="16" class="propeller" />
-
-            <!-- Halos de rotation -->
-            <circle cx="-35" cy="-35" r="25" class="propeller-blur" />
-            <circle cx="35"  cy="35"  r="25" class="propeller-blur" />
-            <circle cx="35"  cy="-35" r="25" class="propeller-blur" />
-            <circle cx="-35" cy="35"  r="25" class="propeller-blur" />
-
-            <!-- Corps central du drone -->
-            <circle cx="0" cy="0" r="13" class="drone-body" />
-
-            <!-- ========= Icônes par secteur ========= -->
-            <!-- Haut-gauche : Mine -->
-            <g transform="translate(-35,-35)">
-              <circle cx="0" cy="0" r="13" class="inner-circle" />
-
-              <!-- Pioche (gauche / descendante) -->
-              <path d="M -5 -5 L 6 6" class="icon-stroke" />          <!-- Manche -->
-              <path d="M -7 1 Q -6 -6 1 -7" class="icon-stroke" />   <!-- Tête arrondie -->
-
-              <!-- Pelle (droite / montante) -->
-              <path d="M -6 6 L 3 -3" class="icon-stroke" />   <!-- Manche -->
-              <path d="M 6 -6 L 4 -6 L 2 -4 L 4 -2 L 6 -4 Z" class="icon-stroke" />   <!-- Lame pointue -->
-
-            </g>
-
-
-            <!-- Haut-droite : Foresterie -->
-            <g transform="translate(35,-35)">
-              <circle cx="0" cy="0" r="13" class="inner-circle" />
-              <!-- Sapin simple -->
-              <path d="M 0 -7 L -3 -2 L 3 -2 Z" class="icon-stroke" />
-              <path d="M 0 -3 L -4 1 L 4 1 Z" class="icon-stroke" />
-              <path d="M 0 0 L -5 4 L 5 4 Z" class="icon-stroke" />
-              <!-- Tronc -->
-              <line x1="0" y1="4" x2="0" y2="7" class="icon-stroke" />
-            </g>
-
-            <!-- Bas-gauche : Agriculture -->
-            <g transform="translate(-35,35)">
-            <circle cx="0" cy="0" r="13" class="inner-circle" />
-
-            <!-- Tige -->
-            <path d="M 0 10 L 0 -4" class="icon-stroke" />
-
-            <!-- Grain du haut (inchangé) -->
-            <path d="M 0 -4 
-                  Q -3 -7 0 -10 
-                  Q 3 -7 0 -4"
-                class="icon-stroke" />
-
-            <path d="M 0 -1 Q 0 -6 -4 -6 Q -4 -2 0 -1" class="icon-stroke" />
-            <path d="M 0  3 Q 0 -2 -4 -2 Q -4  2 0  3" class="icon-stroke" />
-            <path d="M 0  7 Q 0  2 -4  2 Q -4  6 0  7" class="icon-stroke" />
-            <path d="M 0 -1 Q 0 -6  4 -6 Q  4 -2 0 -1" class="icon-stroke" />
-            <path d="M 0  3 Q 0 -2  4 -2 Q  4  2 0  3" class="icon-stroke" />
-            <path d="M 0  7 Q 0  2  4  2 Q  4  6 0  7" class="icon-stroke" />
-            </g>
-
-            <!-- Bas-droite : Tourisme -->
-            <g transform="translate(35,35)">
-              <circle cx="0" cy="0" r="13" class="inner-circle" />
-              <!-- Tente -->
-              <path d="M -5 4 L 0 -5 L 5 4 Z" class="icon-stroke" />
-              <path d="M 0 -5 L 0 4" class="icon-stroke" />
-              <!-- Ligne de sol -->
-              <line x1="-6" y1="4" x2="6" y2="4" class="icon-stroke" />
-              <!-- Petit soleil / étoile -->
-              <circle cx="5" cy="-5" r="1.4" class="inner-circle" />
-              <circle cx="5" cy="-5" r="1.4" class="icon-stroke" />
-            </g>
-
-          </g>
-            <!-- Texte
-          <text x="100" y="190"
-                text-anchor="middle"
-                class="logo-text">
-            DRONE ABITIBI
-          </text>  
-          -->
-        </svg>
-
-
+        <p class="eyebrow">Imagerie aérienne · Abitibi-Témiscamingue</p>
         <h1>Drone Abitibi</h1>
+        <p class="home-hero-lead">
+          Photographie et vidéo aérienne, suivi de chantier et cartographie par drone.
+        </p>
 
-        <p>Mettre en valeur l'Abitibi-Témiscamingue par l'imagerie aérienne.</p>
-
-        <div class="buttons">
-
-          <a href="galerie.html" class="button">
-            <i data-lucide="camera"></i>
-            Photographie
+        <div class="buttons home-actions">
+          <a href="#services" class="button">
+            <i data-lucide="arrow-down"></i>
+            Voir les services
           </a>
 
-          <a href="suivi-chantier.html" class="button">
-            <i data-lucide="hard-hat"></i>
-            Suivi de chantier
+          <a href="#contact" class="button button-primary">
+            <i data-lucide="message-square"></i>
+            Parler de votre projet
           </a>
-
-          <a href="cartographie.html" class="button">
-            <i data-lucide="map"></i>
-            Cartographie
-          </a>
-
-          <a href="formation.html" class="button">
-            <i data-lucide="graduation-cap"></i>
-            Formation
-          </a>
-
-          <a href="https://www.tiktok.com/@droneabitibi"
-            class="button"
-            target="_blank"
-            rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="165 112 695 800"
-                fill="currentColor">
-                <path d="M365.014.667C408.68 0 452.011.333 495.342 0c2.667 51 21 102.999 58.33 138.998 37.332 37 89.997 54 141.328 59.666v134.332c-47.998-1.667-96.33-11.667-139.994-32.333-19-8.667-36.665-19.667-53.998-31-.333 97.332.334 194.665-.666 291.663-2.667 46.666-18 93-44.998 131.332-43.665 64-119.328 105.665-196.992 106.999-47.664 2.666-95.329-10.334-135.994-34.333C55.028 725.658 7.696 652.992.697 574.993c-.667-16.667-1-33.333-.334-49.666 6-63.333 37.332-123.999 85.997-165.332 55.33-47.999 132.66-70.999 204.99-57.332.667 49.333-1.332 98.665-1.332 147.998-33-10.667-71.664-7.667-100.663 12.333-20.999 13.667-36.998 34.666-45.331 58.333-7 17-5 35.666-4.667 53.666 8 54.666 60.664 100.665 116.662 95.665 37.332-.333 72.997-22 92.33-53.666 6.332-11 13.332-22.333 13.665-35.333 3.334-59.666 2-118.998 2.334-178.664.333-134.332-.334-268.33.666-402.328"
-                      transform="translate(165 112)"/>
-            </svg>
-            <span>TikTok</span>
-          </a>
-
-          <a href="https://www.facebook.com/droneabitibi"
-            class="button"
-            target="_blank"
-            rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                viewBox="2 2 20 20"
-                fill="currentColor">
-                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-            </svg>
-            <span>Facebook</span>
-          </a>
-
         </div>
       </div>
     </section>
 
-    <section id="contact" class="intro page-section">
-
-      <p class="intro-text">
-        Drone Abitibi est une initiative régionale spécialisée en imagerie aérienne par drone pour l'Abitibi-Témiscamingue.
-      </p>
-
-      <div class="intro-contact">
-
-        <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel">
-          <i data-lucide="mail"></i>
-          info@droneabitibi.ca
-        </a>
-
-        <a href="sms:+18199755777" class="contact-pill" aria-label="Appel ou message texte">
-          <i data-lucide="message-square"></i>
-          (819) 975-5777
-        </a>
-
+    <section id="services" class="page-section home-services">
+      <div class="home-section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Des services abordables, adaptés au projet.</h2>
+        <p>
+          Pour mettre en valeur un lieu, documenter l'évolution d'un chantier ou obtenir une vue d'ensemble d'un site.
+        </p>
       </div>
 
+      <div class="service-grid">
+        <a href="galerie.html" class="service-card service-card-photo">
+          <div class="service-card-content">
+            <i data-lucide="camera"></i>
+            <p class="eyebrow">Image</p>
+            <h3>Photographie et vidéo</h3>
+            <p>
+              Images aériennes pour l'immobilier, les entreprises, les événements, le tourisme et la mise en valeur d'un site.
+            </p>
+            <span class="service-link">Voir les images <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="suivi-chantier.html" class="service-card service-card-chantier">
+          <div class="service-card-content">
+            <i data-lucide="hard-hat"></i>
+            <p class="eyebrow">Documentation</p>
+            <h3>Suivi de chantier</h3>
+            <p>
+              Prises de vues ponctuelles ou récurrentes pour documenter l'avancement, les conditions du site et les travaux réalisés.
+            </p>
+            <span class="service-link">Découvrir le service <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+
+        <a href="cartographie.html" class="service-card service-card-carto">
+          <div class="service-card-content">
+            <i data-lucide="map"></i>
+            <p class="eyebrow">Données</p>
+            <h3>Cartographie</h3>
+            <p>
+              Orthophotos, modèles numériques et données photogrammétriques pour mieux lire, documenter et suivre un site.
+            </p>
+            <span class="service-link">Voir un exemple <i data-lucide="arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <section class="page-section credentials home-credentials" aria-label="Certifications et conformité">
+    <section class="page-section home-recurring">
+      <div class="home-recurring-inner">
+        <div>
+          <p class="eyebrow">À venir</p>
+          <h2>Formation</h2>
+          <p>
+             Une offre de formation pour les pilotes et les organisations est actuellement en développement.
+          </p>
+        </div>
 
+        <a href="formation.html" class="pill-link">
+          En savoir plus
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-section credentials home-credentials" aria-label="Conformité et capacité opérationnelle">
       <div class="credentials-badges">
-
         <span>
           <i data-lucide="plane"></i>
-          Vols en espace aérien contrôlé
+          Opérations avancées
         </span>
 
         <span>
-          <i data-lucide="drone"></i>
-          Drones immatriculés
+          <i data-lucide="radio-tower"></i>
+          Espace aérien contrôlé
         </span>
 
         <span>
@@ -334,19 +170,34 @@
           <i data-lucide="receipt-text"></i>
           TPS / TVQ
         </span>
-
       </div>
-
     </section>
 
+    <section id="contact" class="intro page-section home-contact">
+      <p class="eyebrow">Nous joindre</p>
+      <p class="intro-text">
+        Un projet en Abitibi-Témiscamingue? Décrivez simplement ce que vous voulez voir ou documenter.
+      </p>
+
+      <div class="intro-contact">
+        <a href="mailto:info@droneabitibi.ca" class="contact-pill" aria-label="Envoyer un courriel">
+          <i data-lucide="mail"></i>
+          info@droneabitibi.ca
+        </a>
+
+        <a href="sms:+18199755777" class="contact-pill" aria-label="Envoyer un message texte">
+          <i data-lucide="message-square"></i>
+          (819) 975-5777
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer id="bas-page" class="footer">
     <div>
       <strong>Drone Abitibi</strong><br>
-        <a href="mailto:info@droneabitibi.ca" class="footer-email">
-          info@droneabitibi.ca
-        </a>
+      <a href="mailto:info@droneabitibi.ca" class="footer-email">info@droneabitibi.ca</a><br>
+      <a href="vie-privee.html" class="footer-email">Vie privée</a>
     </div>
 
     <div class="footer-company">
@@ -356,64 +207,27 @@
     </div>
 
     <div class="socials">
-
-      <a href="https://www.tiktok.com/@droneabitibi" class="social-link">
-        <img src="assets/tiktok.svg" alt="TikTok">
+      <a href="https://www.tiktok.com/@droneabitibi" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        <img src="assets/tiktok.svg" alt="">
       </a>
 
-      <a href="https://www.facebook.com/droneabitibi" class="social-link">
-        <img src="assets/facebook.svg" alt="Facebook">
+      <a href="https://www.facebook.com/droneabitibi" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+        <img src="assets/facebook.svg" alt="">
       </a>
 
-      <a href="https://www.instagram.com/droneabitibi" class="social-link">
-        <img src="assets/instagram.svg" alt="Instagram">
+      <a href="https://www.instagram.com/droneabitibi" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="assets/instagram.svg" alt="">
       </a>
 
-      <a href="https://www.youtube.com/@droneabitibi" class="social-link">
-        <img src="assets/youtube.png" alt="YouTube">
+      <a href="https://www.youtube.com/@droneabitibi" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="assets/youtube.png" alt="">
       </a>
     </div>
   </footer>
 
-  <script>
-    const map = L.map('map').setView([48.25, -79.05], 9);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
-
-    const lieux = [
-      {
-        nom: "Granada",
-        coords: [48.205, -79.040],
-        lien: "#"
-      },
-      {
-        nom: "Bellecombe",
-        coords: [48.163, -79.177],
-        lien: "#"
-      },
-      {
-        nom: "D'Alembert",
-        coords: [48.373, -79.127],
-        lien: "#"
-      }
-    ];
-
-    lieux.forEach(lieu => {
-      L.marker(lieu.coords)
-        .addTo(map)
-        .bindPopup(`
-          <strong>${lieu.nom}</strong><br>
-          <a href="${lieu.lien}">Voir les images</a>
-        `);
-    });
-  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
